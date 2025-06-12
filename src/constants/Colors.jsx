@@ -1,0 +1,13 @@
+export default {
+    BLACK: "#000000",
+    WHITE: "#FFFFFF",
+    THEME: "#DD101F",
+    DULL_WHITE: "#dedcde",
+    FADE: "#f0f0f0",
+    PLACEHOLDER: "#6D6D6D",
+    INPUTBOX_DEACTIVE_BORDER_COLOR: "#BFBFBF",
+
+    BUTTON_GRADIENT_ONE: "#820205",
+    BUTTON_GRADIENT_TWO: "#EE2925",
+
+}
