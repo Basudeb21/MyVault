@@ -1,8 +1,9 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { scale, verticalScale } from 'react-native-size-matters'
-import { Colors } from '../../constants'
-import Spacer from './Spacer'
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+
+import { Colors } from '../../../constants';
+import Spacer from '../boots/Spacer';
 
 const OutLineButton = ({ label_one, label_two, onPress }) => {
     return (

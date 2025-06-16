@@ -3,9 +3,15 @@ import React, { useState } from 'react'
 import { Colors, Images, NavigationStrings } from '../../constants'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
 import FastImage from 'react-native-fast-image';
-import { Checkbox, GradientTextButton, Link, OutLineButton, PasswordInputBox, PhoneNumberInput, Spacer, TextInputBox } from '../../components/framework';
 import { useNavigation } from '@react-navigation/native';
-
+import Checkbox from '../../components/framework/input/CheckBox';
+import PasswordInputBox from '../../components/framework/input/PasswordInputBox';
+import PhoneNumberInput from '../../components/framework/input/PhoneNumberInput';
+import TextInputBox from '../../components/framework/input/TextInputBox';
+import GradientTextButton from '../../components/framework/button/GradientTextButton';
+import OutLineButton from '../../components/framework/button/OutLineButton';
+import Link from '../../components/framework/boots/Link';
+import Spacer from '../../components/framework/boots/Spacer';
 
 const SignupScreen = () => {
 
@@ -22,6 +28,14 @@ const SignupScreen = () => {
     const handleSignupPress = () => {
         navigation.navigate(NavigationStrings.LOGIN_SCREEN)
     }
+
+    const handlehomePress = () => {
+        navigation.navigate(NavigationStrings.MAIN_STACK, {
+            screen: NavigationStrings.HOME_SCREEN
+        })
+
+    }
+
     return (
         <ScrollView >
             <KeyboardAvoidingView>
@@ -65,7 +79,7 @@ const SignupScreen = () => {
                 </View>
                 <Spacer height={40} />
                 <View style={styles.btnContainer}>
-                    <GradientTextButton label='Signup' />
+                    <GradientTextButton label='Signup' onPress={handlehomePress} />
                     <Spacer height={10} />
                     <OutLineButton label_one={"Already have an account?"} label_two={"Login"} onPress={handleSignupPress} />
 

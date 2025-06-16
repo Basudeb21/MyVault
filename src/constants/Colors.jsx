@@ -4,10 +4,20 @@ export default {
     THEME: "#DD101F",
     DULL_WHITE: "#dedcde",
     FADE: "#f0f0f0",
+    BLUE: "#0c8ce9",
+    YELLOW: "#fcac00",
+    FADE_TEXT: "#252525",
+    LIGHT_GRAY: "#EBEBEB",
+    HR_COLOR: "#B5B5B5",
+
+
+
     PLACEHOLDER: "#6D6D6D",
     INPUTBOX_DEACTIVE_BORDER_COLOR: "#BFBFBF",
+    SUGGESTION_USER_BORDER: "#B4B4B4",
 
     BUTTON_GRADIENT_ONE: "#820205",
     BUTTON_GRADIENT_TWO: "#EE2925",
+    USER_ID_NAME: "#979797",
 
 }

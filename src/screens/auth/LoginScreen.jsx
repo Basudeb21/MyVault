@@ -3,8 +3,14 @@ import React, { useState } from 'react'
 import { Images, NavigationStrings } from '../../constants'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
 import FastImage from 'react-native-fast-image';
-import { GradientTextButton, Link, OutLineButton, PasswordInputBox, Spacer, TextInputBox } from '../../components/framework';
 import { useNavigation } from '@react-navigation/native';
+import GradientTextButton from '../../components/framework/button/GradientTextButton';
+import OutLineButton from '../../components/framework/button/OutLineButton';
+import Link from '../../components/framework/boots/Link';
+import Spacer from '../../components/framework/boots/Spacer';
+import PasswordInputBox from '../../components/framework/input/PasswordInputBox';
+import TextInputBox from '../../components/framework/input/TextInputBox';
+
 
 const LoginScreen = () => {
     const [userName, setUserName] = useState('');
@@ -33,7 +39,7 @@ const LoginScreen = () => {
                 <PasswordInputBox value={password} setValue={setPassword} placeholder='Password' />
             </View>
             <View style={styles.btnContainer}>
-                <GradientTextButton label='Login' />
+                <GradientTextButton label='Login' width='100%' />
                 <Spacer height={10} />
                 <Link label={"Forgot Password?"} />
                 <Spacer height={40} />

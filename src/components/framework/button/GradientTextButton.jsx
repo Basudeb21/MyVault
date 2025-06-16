@@ -1,33 +1,29 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import LinearGradient from 'react-native-linear-gradient';
-import { Colors } from '../../constants';
+import { Colors } from '../../../constants';
 import { scale, verticalScale } from 'react-native-size-matters';
 
-const GradientTextButton = ({ label = "Label", onPress }) => {
+const GradientTextButton = ({ label = "Label", onPress, height = 33, fontSize = 18, width = "100%" }) => {
     return (
-        <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
+        <TouchableOpacity onPress={onPress} activeOpacity={0.8} style={{ width }}>
             <LinearGradient
                 colors={[Colors.BUTTON_GRADIENT_TWO, Colors.BUTTON_GRADIENT_ONE]}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 0 }}
-                style={styles.button}
+                style={[styles.button, { height: verticalScale(height) }]}
             >
-                <Text style={styles.text}>{label}</Text>
-
+                <Text style={[styles.text, { fontSize: scale(fontSize) }]}>{label}</Text>
             </LinearGradient>
         </TouchableOpacity>
-    )
-}
+    );
+};
 
 export default GradientTextButton
 
 const styles = StyleSheet.create({
     button: {
-        width: "100%",
-        height: verticalScale(33),
         borderRadius: 6,
-        alignSelf: "center",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
@@ -35,6 +31,5 @@ const styles = StyleSheet.create({
     text: {
         color: Colors.WHITE,
         fontWeight: "700",
-        fontSize: scale(18),
     },
 })

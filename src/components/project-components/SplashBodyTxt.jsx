@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { scale } from 'react-native-size-matters'
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 
 const SplashBodyTxt = ({
     label = "" }) => {

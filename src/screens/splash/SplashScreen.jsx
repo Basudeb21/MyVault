@@ -3,8 +3,8 @@ import React, { useEffect } from 'react'
 import { Colors, Images, NavigationStrings } from '../../constants'
 import FastImage from 'react-native-fast-image';
 import { useNavigation } from '@react-navigation/native';
+import LoadingBar from '../../components/framework/boots/LoadingBar';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
-import { LoadingBar } from '../../components/framework';
 
 const SplashScreen = () => {
     const navigation = useNavigation();

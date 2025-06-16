@@ -1,10 +1,11 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import LinearGradient from 'react-native-linear-gradient';
-import { Colors } from '../../constants';
-import { scale } from 'react-native-size-matters';
+import { Colors } from '../../../constants';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import Spacer from './Spacer';
+import Spacer from '../boots/Spacer';
 
 const GradientIconButton = ({ label = "Swipe to next", onPress }) => {
     return (

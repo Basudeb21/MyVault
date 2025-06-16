@@ -1,10 +1,16 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
-import { SplashBodyTxt, SplashHead, SplashHeadTxt } from '../../components/project-components'
 import { Colors, Images, NavigationStrings } from '../../constants'
-import { moderateScale, verticalScale } from 'react-native-size-matters'
-import { GradientIconButton, Spacer, ThreeDots } from '../../components/framework'
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+
 import { useNavigation } from '@react-navigation/native'
+import SplashBodyTxt from '../../components/project-components/SplashBodyTxt'
+import SplashHead from '../../components/project-components/SplashHead'
+import SplashHeadTxt from '../../components/project-components/SplashHeadTxt'
+import GradientIconButton from '../../components/framework/button/GradientIconButton'
+import Spacer from '../../components/framework/boots/Spacer'
+import ThreeDots from '../../components/framework/micro/ThreeDots'
+
 
 const SplashInfo = () => {
     const [index, setIndex] = useState(0);

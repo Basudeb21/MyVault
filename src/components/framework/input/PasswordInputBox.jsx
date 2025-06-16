@@ -1,7 +1,8 @@
 import { StyleSheet, TextInput, View, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
-import { scale } from 'react-native-size-matters';
-import { Colors } from '../../constants';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+
+import { Colors } from '../../../constants';
 import Icon from 'react-native-vector-icons/Feather';
 
 const PasswordInputBox = ({ value, setValue, placeholder }) => {

@@ -1,8 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
-import { Colors } from '../../constants'
-import Spacer from './Spacer'
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+
+import { Colors } from '../../../constants';
+import Spacer from '../boots/Spacer';
+
 
 const ThreeDots = ({ num = 1 }) => {
     return (
