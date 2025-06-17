@@ -9,6 +9,7 @@ export default {
     // Nested Stacks
     HOME_STACK: "HomeStack",
     CHAT_STACK: "ChatStack",
+    PROFILE_STACK: "ProfileStack",
 
 
 
@@ -39,5 +40,16 @@ export default {
 
 
     // Chat Stack Options
-    FRIEND_CHAT_SCREEN: "FriendChatScreen"
+    FRIEND_CHAT_SCREEN: "FriendChatScreen",
+
+
+    // Profile Stack Options
+    PROFILE_EDIT_SCREEN: "EditProfile",
+    PROFILE_STREAM_SCREEN: "ProfileStream",
+    PROFILE_ORDER_SCREEN: "ProfileOrder",
+    PROFILE_LISTS_SCREEN: "ProfileLists",
+    PROFILE_BOOKMARK_SCREEN: "ProfileBookmark",
+    PROFILE_WALLET_SCREEN: "ProfileWallet",
+    PROFILE_SUBSCRIPTIONS_SCREEN: "ProfileSubscription",
+    PROFILE_REFERALS_SCREEN: "ProfileReferal"
 }

@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import BackPressTopbarWithIcon from '../../../components/framework/navbar/BackPressTopbarWithIcon';
 import ChatFriendCard from '../../../components/framework/card/ChatFriendCard';
 import Spacer from '../../../components/framework/boots/Spacer';
-import SearchBar from '../../../components/framework/micro/SearchBar';
+import SearchBar from '../../../components/framework/input/SearchBar';
 // import { BackPressTopbarWithIcon } from '../../../components/framework/navbar';
 // import { ChatFriendCard } from '../../../components/framework/card';
 // import { SearchBar } from '../../../components/framework/micro';

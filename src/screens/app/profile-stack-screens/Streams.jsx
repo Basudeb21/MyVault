@@ -1,16 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import UnderMaintainence from '../../components/project-components/UnderMaintainence'
+import UnderMaintainence from '../../../components/project-components/UnderMaintainence'
 
-const LivePage = () => {
+const Streams = () => {
     return (
         <View>
             <UnderMaintainence />
-
         </View>
     )
 }
 
-export default LivePage
+export default Streams
 
 const styles = StyleSheet.create({})

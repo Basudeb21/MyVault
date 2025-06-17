@@ -4,6 +4,7 @@ import { NavigationStrings } from '../constants';
 import HomeStack from './HomeStack';
 import ChatStack from './ChatStack';
 import BottomNavbar from '../components/framework/navbar/BottomNavbar';
+import ProfileStack from './ProfileStack';
 // import { BottomNavbar } from '../components/framework/navbar';
 
 const MainStack = () => {
@@ -22,6 +23,10 @@ const MainStack = () => {
             <Stack.Screen
                 name={NavigationStrings.CHAT_STACK}
                 component={ChatStack}
+            />
+            <Stack.Screen
+                name={NavigationStrings.PROFILE_STACK}
+                component={ProfileStack}
             />
         </Stack.Navigator>
     );
