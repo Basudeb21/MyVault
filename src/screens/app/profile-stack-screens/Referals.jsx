@@ -6,6 +6,7 @@ import BackpressTopBar from '../../../components/framework/navbar/BackpressTopBa
 import { moderateScale, scale } from 'react-native-size-matters'
 import Spacer from '../../../components/framework/boots/Spacer'
 import InviteLinkCard from '../../../components/framework/card/InviteLinkCard'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Referals = () => {
     const referalUser = [
@@ -20,7 +21,7 @@ const Referals = () => {
     ];
 
     return (
-        <View style={{ backgroundColor: Colors.WHITE, flex: 1 }}>
+        <SafeAreaView style={{ backgroundColor: Colors.WHITE, flex: 1 }}>
             <BackpressTopBar title={"Referals"} />
 
             <FlatList
@@ -51,7 +52,7 @@ const Referals = () => {
 
 
 
-        </View>
+        </SafeAreaView>
     )
 }
 

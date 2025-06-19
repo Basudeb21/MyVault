@@ -16,7 +16,8 @@ import OutlineIconButton from '../../components/framework/button/OutlineIconButt
 import Spacer from '../../components/framework/boots/Spacer'
 import OutLineButton from '../../components/framework/button/OutLineButton'
 import { useNavigation } from '@react-navigation/native'
-import { NavigationStrings } from '../../constants'
+import { Colors, NavigationStrings } from '../../constants'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const ProfilePage = () => {
 
@@ -90,7 +91,7 @@ const ProfilePage = () => {
     ]
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <BackpressProfileTopBar title={"Myprofile_4321"} />
             <ProfileCard />
             <Spacer height={75} />
@@ -131,7 +132,7 @@ const ProfilePage = () => {
                 }
                 showsVerticalScrollIndicator={false}
             />
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -140,6 +141,7 @@ export default ProfilePage
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: Colors.WHITE
     },
     contentContainer: {
         paddingHorizontal: moderateScale(16),

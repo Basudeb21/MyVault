@@ -8,6 +8,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import Spacer from '../../../components/framework/boots/Spacer';
 import GradientTextButton from '../../../components/framework/button/GradientTextButton';
 import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const OrderSuccessfull = () => {
     const navigation = useNavigation();
@@ -15,7 +16,7 @@ const OrderSuccessfull = () => {
         navigation.navigate(NavigationStrings.PROFILE_STACK)
     }
     return (
-        <View>
+        <SafeAreaView>
             <BackpressTopBar title={"Order Status"} />
             <FastImage
                 source={Images.WHITE_LOGO}
@@ -37,7 +38,7 @@ const OrderSuccessfull = () => {
             <View style={styles.btn}>
                 <GradientTextButton label='Order Details' width='40%' onPress={openOrderDetails} />
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 

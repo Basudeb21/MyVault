@@ -6,10 +6,10 @@ import BottomBar from '../navbar/shared-post-components/BottomBar'
 import Topbar from '../navbar/shared-post-components/Topbar'
 
 
-const SharedPost = ({ userAvatar, postImage }) => {
+const SharedPost = ({ userName, userAvatar, postImage }) => {
     return (
         <View style={styles.container}>
-            <Topbar userAvatar={userAvatar} />
+            <Topbar userAvatar={userAvatar} userName={userName} />
             <Image
                 source={{ uri: postImage }}
                 style={styles.postImage}

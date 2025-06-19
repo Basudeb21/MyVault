@@ -13,6 +13,10 @@ export default {
 
     // Sub Screens
     VIEW_ORDER: "ViewOrder",
+    HOME_FRIEND_PROFILE_PAGE: "FriendProfilePage",
+    HOME_SHOP_SCREEN: "ShopScreen",
+    HOME_SHOP_ITEM_INFO_PAGE: "ShopItemInfo",
+    HOME_VIEW_LIST_CONTENT: "ViewListContent",
 
 
 

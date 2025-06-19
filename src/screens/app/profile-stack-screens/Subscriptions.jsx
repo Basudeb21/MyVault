@@ -5,6 +5,7 @@ import { Colors, Images } from '../../../constants'
 import BackpressTopBar from '../../../components/framework/navbar/BackpressTopBar'
 import Spacer from '../../../components/framework/boots/Spacer'
 import SimpleTable from '../../../components/framework/boots/SimpleTable'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Subscriptions = () => {
     const tableData = [
@@ -26,14 +27,14 @@ const Subscriptions = () => {
     ];
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <BackpressTopBar title={"My Subscriptions"} />
             <Spacer height={10} />
             <SearchBar placeholder={"Search"} />
             <ScrollView>
                 <SimpleTable data={tableData} />
             </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 }
 

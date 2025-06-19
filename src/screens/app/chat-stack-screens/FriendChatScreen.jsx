@@ -9,13 +9,14 @@ import ChatSend from '../../../components/framework/chat/ChatSend';
 import ChatRecive from '../../../components/framework/chat/ChatRecive';
 import MessageSendArea from '../../../components/framework/input/MessageSendArea';
 import { verticalScale } from 'react-native-size-matters';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const FriendChatScreen = ({ route }) => {
     const { user } = route.params;
     const [message, setMessage] = useState('');
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <ChatBackPressTopBar info={user} />
             <View style={styles.chatContainer}>
                 <ScrollView contentContainerStyle={styles.scrollContent}>
@@ -41,7 +42,7 @@ const FriendChatScreen = ({ route }) => {
                 </ScrollView>
             </View>
             <MessageSendArea value={message} setValue={setMessage} placeholder="Type a message..." />
-        </View>
+        </SafeAreaView>
     )
 };
 

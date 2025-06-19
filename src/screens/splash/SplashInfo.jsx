@@ -11,6 +11,7 @@ import GradientIconButton from '../../components/framework/button/GradientIconBu
 import Spacer from '../../components/framework/boots/Spacer'
 import ThreeDots from '../../components/framework/micro/ThreeDots'
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 const SplashInfo = () => {
@@ -59,7 +60,7 @@ const SplashInfo = () => {
     };
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <SplashHead />
             <Image source={{ uri: img_arr[index] }} style={styles.imageBG} />
             <View style={styles.txtContainer}>
@@ -84,7 +85,7 @@ const SplashInfo = () => {
                 </View>
             </View>
             <Spacer height={60} />
-            <ThreeDots num={index + 1} />
+            <ThreeDots active={index + 1} total={img_arr.length} />
             <Spacer height={70} />
             <View style={styles.btn}>
                 <GradientIconButton
@@ -96,7 +97,7 @@ const SplashInfo = () => {
                     width='50%'
                 />
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 

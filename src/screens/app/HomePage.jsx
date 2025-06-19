@@ -6,6 +6,7 @@ import HomeTopBar from '../../components/framework/navbar/HomeTopBar'
 import { StoryHighlightArea, SuggestionArea } from './home-mini-components'
 import SharedPost from '../../components/framework/card/SharedPost'
 import Spacer from '../../components/framework/boots/Spacer'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const HomePage = () => {
     const navigation = useNavigation();
@@ -36,7 +37,7 @@ const HomePage = () => {
 
 
     return (
-        <View>
+        <SafeAreaView>
             <HomeTopBar
                 searchOnPress={handleSearchPress}
                 notificationOnPress={handleNotificationPress}
@@ -46,16 +47,16 @@ const HomePage = () => {
             <ScrollView>
                 <StoryHighlightArea />
                 <ScrollView>
-                    <SharedPost userAvatar={Images.CELEBRITY_AVATAR_ONE} postImage={Images.POST_ONE} />
-                    <SharedPost userAvatar={Images.CELEBRITY_AVATAR_TWO} postImage={Images.POST_TWO} />
+                    <SharedPost userAvatar={Images.CELEBRITY_AVATAR_ONE} postImage={Images.POST_ONE} userName={"Fans_5"} />
+                    <SharedPost userAvatar={Images.CELEBRITY_AVATAR_TWO} postImage={Images.POST_TWO} userName={"Fans_3"} />
                     <SuggestionArea />
-                    <SharedPost userAvatar={Images.CELEBRITY_AVATAR_THREE} postImage={Images.POST_THREE} />
-                    <SharedPost userAvatar={Images.CELEBRITY_AVATAR_FOUR} postImage={Images.POST_FOUR} />
-                    <SharedPost userAvatar={Images.CELEBRITY_AVATAR_FIVE} postImage={Images.POST_FIVE} />
+                    <SharedPost userAvatar={Images.CELEBRITY_AVATAR_THREE} postImage={Images.POST_THREE} userName={"Fans_21"} />
+                    <SharedPost userAvatar={Images.CELEBRITY_AVATAR_FOUR} postImage={Images.POST_FOUR} userName={"Fans_1"} />
+                    <SharedPost userAvatar={Images.CELEBRITY_AVATAR_FIVE} postImage={Images.POST_FIVE} userName={"Fans_6"} />
                 </ScrollView>
                 <Spacer height={150} />
             </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 }
 

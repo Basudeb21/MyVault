@@ -4,10 +4,11 @@ import BackpressTopBar from '../../../components/framework/navbar/BackpressTopBa
 import CartItem from '../../../components/project-components/CartItem'
 import { Colors } from '../../../constants'
 import Spacer from '../../../components/framework/boots/Spacer'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const CartScreen = () => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <BackpressTopBar title={"Cart"} />
             <ScrollView>
                 <CartItem />
@@ -16,7 +17,7 @@ const CartScreen = () => {
                 <Spacer height={120} />
 
             </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 }
 

@@ -6,6 +6,7 @@ import Spacer from '../../../components/framework/boots/Spacer'
 import GradientTextButton from '../../../components/framework/button/GradientTextButton'
 import { Colors, NavigationStrings } from '../../../constants'
 import { useNavigation } from '@react-navigation/native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const CheckoutPage = () => {
     const navigation = useNavigation();
@@ -13,7 +14,7 @@ const CheckoutPage = () => {
         navigation.navigate(NavigationStrings.HOME_PLACE_ORDER_SCREEN)
     }
     return (
-        <View style={{ backgroundColor: Colors.WHITE, flex: 1 }}>
+        <SafeAreaView style={{ backgroundColor: Colors.WHITE, flex: 1 }}>
             <BackpressTopBar title={"Checkout"} />
             <ScrollView>
                 <InputFormContainer head={"Billing Address"} />
@@ -29,7 +30,7 @@ const CheckoutPage = () => {
                 </View>
                 <Spacer height={100} />
             </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 }
 

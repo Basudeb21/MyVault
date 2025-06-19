@@ -10,6 +10,7 @@ import Link from '../../components/framework/boots/Link';
 import Spacer from '../../components/framework/boots/Spacer';
 import PasswordInputBox from '../../components/framework/input/PasswordInputBox';
 import TextInputBox from '../../components/framework/input/TextInputBox';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 const LoginScreen = () => {
@@ -23,7 +24,7 @@ const LoginScreen = () => {
     }
 
     return (
-        <View>
+        <SafeAreaView>
             <ImageBackground source={{ uri: Images.LOGIN_IMG }} style={styles.image}>
                 <FastImage
                     source={Images.WHITE_LOGO}
@@ -47,7 +48,7 @@ const LoginScreen = () => {
 
             </View>
 
-        </View>
+        </SafeAreaView>
     )
 }
 

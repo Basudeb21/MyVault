@@ -4,17 +4,18 @@ import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
 import { Colors, Images } from '../../../constants'
 import SuggestionUserCard from '../../../components/framework/card/SuggestionUserCard'
 import Spacer from '../../../components/framework/boots/Spacer'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const SuggestionArea = () => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <View style={styles.textContainer}>
                 <Text style={styles.suggestionTxt}>Suggestions for you</Text>
                 <TouchableOpacity>
                     <Text style={styles.seeAllTxt}>See all</Text>
                 </TouchableOpacity>
             </View>
-            <ScrollView horizontal={true}>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                 <SuggestionUserCard userImage={Images.CELEBRITY_AVATAR_ONE} />
                 <SuggestionUserCard userImage={Images.CELEBRITY_AVATAR_TWO} />
                 <SuggestionUserCard userImage={Images.CELEBRITY_AVATAR_THREE} />
@@ -22,7 +23,7 @@ const SuggestionArea = () => {
                 <SuggestionUserCard userImage={Images.CELEBRITY_AVATAR_FIVE} />
                 <Spacer width={10} />
             </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 }
 

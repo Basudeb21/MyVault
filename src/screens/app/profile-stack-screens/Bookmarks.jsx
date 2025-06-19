@@ -10,6 +10,7 @@ import SearchBar from '../../../components/framework/input/SearchBar'
 import { Colors, Images } from '../../../constants'
 import BookmarkTabDetails from './sub-screen/BookmarkTabDetails'
 import NoContantPage from './sub-screen/NoContantPage'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Tab = createMaterialTopTabNavigator()
 
@@ -69,13 +70,13 @@ const BookmarksTabs = () => {
 
 const Bookmarks = () => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <BackpressTopBar title="Bookmarks" />
             <SearchBar placeholder="Search" />
             <View style={styles.tabContainer}>
                 <BookmarksTabs />
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 

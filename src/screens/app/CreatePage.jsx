@@ -5,14 +5,15 @@ import ChatFriendCard from '../../components/framework/card/ChatFriendCard'
 // import { ChatFriendCard } from '../../components/framework/card'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import UnderMaintainence from '../../components/project-components/UnderMaintainence';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 const CreatePage = () => {
     return (
-        <View>
+        <SafeAreaView>
             <UnderMaintainence />
 
-        </View>
+        </SafeAreaView>
     )
 }
 

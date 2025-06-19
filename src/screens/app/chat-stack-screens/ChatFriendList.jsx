@@ -6,11 +6,7 @@ import BackPressTopbarWithIcon from '../../../components/framework/navbar/BackPr
 import ChatFriendCard from '../../../components/framework/card/ChatFriendCard';
 import Spacer from '../../../components/framework/boots/Spacer';
 import SearchBar from '../../../components/framework/input/SearchBar';
-// import { BackPressTopbarWithIcon } from '../../../components/framework/navbar';
-// import { ChatFriendCard } from '../../../components/framework/card';
-// import { SearchBar } from '../../../components/framework/micro';
-// import { Spacer } from '../../../components/framework/boots';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const ChatFriendList = () => {
     const users = [
@@ -41,7 +37,7 @@ const ChatFriendList = () => {
 
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <BackPressTopbarWithIcon title={"Myprofile_4321"} />
             <SearchBar value={searchTxt} setValue={setSearchTxt} placeholder={"Search"} />
             <FlatList
@@ -58,7 +54,7 @@ const ChatFriendList = () => {
                 ListFooterComponent={<Spacer height={230} />}
                 contentContainerStyle={styles.scrollContent}
             />
-        </View>
+        </SafeAreaView>
     );
 };
 

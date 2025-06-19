@@ -1,15 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { ChatFriendList } from './chat-stack-screens'
-// import { ChatFriendList } from './chat-stack-screens'
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 const ChatPage = () => {
     return (
-        <View>
+        <SafeAreaView>
             <ChatFriendList />
-        </View>
+        </SafeAreaView>
     )
 }
 

@@ -1,15 +1,15 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Images } from '../../../constants'
-
 import NotificationCard from '../../../components/framework/card/NotificationCard'
 import BackpressTopBar from '../../../components/framework/navbar/BackpressTopBar';
 import Spacer from '../../../components/framework/boots/Spacer';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 const NotificationScreen = () => {
     return (
-        <View>
+        <SafeAreaView>
             <BackpressTopBar title={"Notifications"} />
             <ScrollView>
                 <NotificationCard
@@ -78,7 +78,7 @@ const NotificationScreen = () => {
                 <Spacer height={70} />
 
             </ScrollView>
-        </View>
+        </SafeAreaView>
     )
 }
 

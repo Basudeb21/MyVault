@@ -7,6 +7,7 @@ import GradientTextButton from '../../../components/framework/button/GradientTex
 import OutLineButton from '../../../components/framework/button/OutLineButton'
 import OrderTable from '../../../components/framework/boots/OrderTable'
 import Spacer from '../../../components/framework/boots/Spacer'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const Orders = () => {
     const tableData = [
@@ -22,7 +23,7 @@ const Orders = () => {
         { id: 10, image: Images.PRODUCT_FIVE, orderType: "Sunglass", quantity: "2", orderDate: "May 29\n2025,", orderPrice: "$390.00", status: "Shipped" }
     ]
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <BackpressTopBar title={"Orders"} />
             <ScrollView>
                 <Text style={styles.headText}>Your active product</Text>
@@ -34,7 +35,7 @@ const Orders = () => {
                 <OrderTable data={tableData} />
             </ScrollView>
 
-        </View>
+        </SafeAreaView>
     )
 }
 

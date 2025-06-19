@@ -2,12 +2,13 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Colors } from '../../../../constants'
 import { scale } from 'react-native-size-matters'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 const NoContantPage = () => {
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Text style={styles.text}>No post available of this content</Text>
-        </View>
+        </SafeAreaView>
     )
 }
 

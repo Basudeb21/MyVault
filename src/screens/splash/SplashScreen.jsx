@@ -5,6 +5,7 @@ import FastImage from 'react-native-fast-image';
 import { useNavigation } from '@react-navigation/native';
 import LoadingBar from '../../components/framework/boots/LoadingBar';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const SplashScreen = () => {
     const navigation = useNavigation();
@@ -17,7 +18,7 @@ const SplashScreen = () => {
         return () => clearTimeout(timer);
     }, []);
     return (
-        <View style={styles.screen}>
+        <SafeAreaView style={styles.screen}>
             <FastImage
                 source={Images.BLACK_LOGO}
                 style={styles.logo}
@@ -27,7 +28,7 @@ const SplashScreen = () => {
                 <LoadingBar />
                 <Text style={styles.loadingTxt}>Loading....</Text>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 

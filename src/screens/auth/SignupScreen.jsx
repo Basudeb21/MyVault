@@ -12,6 +12,7 @@ import GradientTextButton from '../../components/framework/button/GradientTextBu
 import OutLineButton from '../../components/framework/button/OutLineButton';
 import Link from '../../components/framework/boots/Link';
 import Spacer from '../../components/framework/boots/Spacer';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const SignupScreen = () => {
 
@@ -37,56 +38,58 @@ const SignupScreen = () => {
     }
 
     return (
-        <ScrollView >
-            <KeyboardAvoidingView>
-                <ImageBackground source={{ uri: Images.SIGNUP_IMG }} style={styles.image}>
-                    <FastImage
-                        source={Images.WHITE_LOGO}
-                        style={styles.logo}
-                        resizeMode={FastImage.resizeMode.contain}
-                    />
-                </ImageBackground>
+        <SafeAreaView>
+            <ScrollView >
+                <KeyboardAvoidingView>
+                    <ImageBackground source={{ uri: Images.SIGNUP_IMG }} style={styles.image}>
+                        <FastImage
+                            source={Images.WHITE_LOGO}
+                            style={styles.logo}
+                            resizeMode={FastImage.resizeMode.contain}
+                        />
+                    </ImageBackground>
 
-                <View style={styles.txtContainer}>
-                    <Text style={styles.loginTxt}>Create Account</Text>
-                    <Text style={[styles.loginTxt, styles.subs]}>For Subscriber</Text>
-                </View>
-                <Spacer height={13} />
+                    <View style={styles.txtContainer}>
+                        <Text style={styles.loginTxt}>Create Account</Text>
+                        <Text style={[styles.loginTxt, styles.subs]}>For Subscriber</Text>
+                    </View>
+                    <Spacer height={13} />
 
-                <View style={styles.inputContainer}>
-                    <TextInputBox value={fullName} setValue={setFullName} placeholder='Full Name*' />
-                    <Spacer height={20} />
-                    <TextInputBox value={email} setValue={setEmail} placeholder='Email*' />
-                    <Spacer height={20} />
-                    <PhoneNumberInput
-                        placeholder='Phone Number'
-                        phoneNumber={phoneNumber}
-                        setphoneNumber={setphoneNumber}
-                        countryCode={countryCode}
-                        setCountryCode={setCountryCode}
-                        callingCode={callingCode}
-                        setCallingCode={setCallingCode}
-                    />
-                    <Spacer height={20} />
-                    <PasswordInputBox value={password} setValue={setPassword} placeholder='Password*' />
-                    <Spacer height={20} />
-                    <PasswordInputBox value={confirmPassword} setValue={setConfirmPassword} placeholder='Confirm Password*' />
-                    <Spacer height={20} />
-                </View>
-                <View style={styles.checkBocContainer}>
-                    <Checkbox />
-                    <Text>I agree to the <Link label={"Terms of Use"} /> and <Link label={"Privacy Policy"} /></Text>
-                </View>
-                <Spacer height={40} />
-                <View style={styles.btnContainer}>
-                    <GradientTextButton label='Signup' onPress={handlehomePress} />
-                    <Spacer height={10} />
-                    <OutLineButton label_one={"Already have an account?"} label_two={"Login"} onPress={handleSignupPress} />
+                    <View style={styles.inputContainer}>
+                        <TextInputBox value={fullName} setValue={setFullName} placeholder='Full Name*' />
+                        <Spacer height={20} />
+                        <TextInputBox value={email} setValue={setEmail} placeholder='Email*' />
+                        <Spacer height={20} />
+                        <PhoneNumberInput
+                            placeholder='Phone Number'
+                            phoneNumber={phoneNumber}
+                            setphoneNumber={setphoneNumber}
+                            countryCode={countryCode}
+                            setCountryCode={setCountryCode}
+                            callingCode={callingCode}
+                            setCallingCode={setCallingCode}
+                        />
+                        <Spacer height={20} />
+                        <PasswordInputBox value={password} setValue={setPassword} placeholder='Password*' />
+                        <Spacer height={20} />
+                        <PasswordInputBox value={confirmPassword} setValue={setConfirmPassword} placeholder='Confirm Password*' />
+                        <Spacer height={20} />
+                    </View>
+                    <View style={styles.checkBocContainer}>
+                        <Checkbox />
+                        <Text>I agree to the <Link label={"Terms of Use"} /> and <Link label={"Privacy Policy"} /></Text>
+                    </View>
+                    <Spacer height={40} />
+                    <View style={styles.btnContainer}>
+                        <GradientTextButton label='Signup' onPress={handlehomePress} />
+                        <Spacer height={10} />
+                        <OutLineButton label_one={"Already have an account?"} label_two={"Login"} onPress={handleSignupPress} />
 
-                </View>
-                <Spacer height={20} />
-            </KeyboardAvoidingView>
-        </ScrollView>
+                    </View>
+                    <Spacer height={20} />
+                </KeyboardAvoidingView>
+            </ScrollView>
+        </SafeAreaView>
     )
 }
 

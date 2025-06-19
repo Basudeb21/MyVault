@@ -5,6 +5,10 @@ import { CartScreen, NotificationScreen, SearchScreen, WalletScreen } from '../s
 import CheckoutPage from '../screens/app/home-stack-screens/CheckoutPage';
 import OrderSuccessfull from '../screens/app/home-stack-screens/OrderSuccessfull';
 import ViewOrder from '../screens/app/profile-stack-screens/sub-screen/ViewOrder';
+import FansProfilePage from '../screens/app/home-stack-screens/FansProfilePage';
+import ShopPage from '../screens/app/home-stack-screens/ShopPage';
+import ShopItemInfoPage from '../screens/app/home-stack-screens/ShopItemInfoPage';
+
 const HomeStack = () => {
     const Stack = createNativeStackNavigator();
 
@@ -17,7 +21,9 @@ const HomeStack = () => {
             <Stack.Screen name={NavigationStrings.HOME_CART_CHECKOUT_SCREEN} component={CheckoutPage} />
             <Stack.Screen name={NavigationStrings.HOME_PLACE_ORDER_SCREEN} component={OrderSuccessfull} />
             <Stack.Screen name={NavigationStrings.VIEW_ORDER} component={ViewOrder} />
-
+            <Stack.Screen name={NavigationStrings.HOME_FRIEND_PROFILE_PAGE} component={FansProfilePage} />
+            <Stack.Screen name={NavigationStrings.HOME_SHOP_SCREEN} component={ShopPage} />
+            <Stack.Screen name={NavigationStrings.HOME_SHOP_ITEM_INFO_PAGE} component={ShopItemInfoPage} />
 
         </Stack.Navigator>
     );

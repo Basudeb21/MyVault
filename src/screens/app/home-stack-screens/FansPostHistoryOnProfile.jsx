@@ -1,41 +1,35 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, View } from 'react-native'
 import React from 'react'
-import { useRoute } from '@react-navigation/native'
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import { moderateScale } from 'react-native-size-matters'
-import { Colors } from '../../../../constants'
-import PostImage from '../../../../components/framework/iamge/PostImage'
+import PostImage from '../../../components/framework/iamge/PostImage'
+import { Colors } from '../../../constants'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
-const BookmarkTabDetails = () => {
-    const route = useRoute();
-    const { bookMarkdata = [] } = route.params || {}
+const FansPostHistoryOnProfile = ({ data = [] }) => {
+    console.log('Received data:', data);
     return (
         <SafeAreaView style={styles.container}>
             <FlatList
-                data={bookMarkdata}
+                data={data}
                 keyExtractor={(item) => item.id.toString()}
                 numColumns={3}
                 columnWrapperStyle={styles.row}
                 renderItem={({ item }) => (
                     <PostImage
                         image={item.image}
-                        Icon={item.type == "image" ? Fontisto : MaterialIcons}
-                        iconName={item.type == "image" ? "photograph" : "video-collection"}
+                        Icon={item.type === "image" ? Fontisto : MaterialIcons}
+                        iconName={item.type === "image" ? "photograph" : "video-collection"}
                     />
                 )}
                 contentContainerStyle={styles.scrollContent}
-
             />
-
-
-
         </SafeAreaView>
     )
 }
 
-export default BookmarkTabDetails
+export default FansPostHistoryOnProfile
 
 const styles = StyleSheet.create({
     container: {
