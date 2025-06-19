@@ -1,10 +1,7 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { Images } from '../../../constants'
-// import { BackpressTopBar } from '../../../components/framework/navbar'
-// import { NotificationCard } from '../../../components/framework/card'
-// import { Spacer } from '../../../components/framework/boots'
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+
 import NotificationCard from '../../../components/framework/card/NotificationCard'
 import BackpressTopBar from '../../../components/framework/navbar/BackpressTopBar';
 import Spacer from '../../../components/framework/boots/Spacer';

@@ -10,6 +10,7 @@ import SplashHeadTxt from '../../components/project-components/SplashHeadTxt'
 import GradientIconButton from '../../components/framework/button/GradientIconButton'
 import Spacer from '../../components/framework/boots/Spacer'
 import ThreeDots from '../../components/framework/micro/ThreeDots'
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 
 const SplashInfo = () => {
@@ -84,8 +85,16 @@ const SplashInfo = () => {
             </View>
             <Spacer height={60} />
             <ThreeDots num={index + 1} />
+            <Spacer height={70} />
             <View style={styles.btn}>
-                <GradientIconButton label={btn_label[index]} onPress={handleNext} />
+                <GradientIconButton
+                    Icon={AntDesign}
+                    label={btn_label[index]}
+                    onPress={handleNext}
+                    iconName={"arrowright"}
+                    iconSize={20}
+                    width='50%'
+                />
             </View>
         </View>
     )
@@ -111,8 +120,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: moderateScale(25)
     },
     btn: {
-        position: "absolute",
-        bottom: 50,
-        alignSelf: "center",
+        alignItems: "center",
     }
+
 })

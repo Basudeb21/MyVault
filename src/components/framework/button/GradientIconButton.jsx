@@ -3,25 +3,22 @@ import React from 'react'
 import LinearGradient from 'react-native-linear-gradient';
 import { Colors } from '../../../constants';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
-
-import AntDesign from 'react-native-vector-icons/AntDesign';
 import Spacer from '../boots/Spacer';
-
-const GradientIconButton = ({ label = "Swipe to next", onPress }) => {
+const GradientIconButton = ({ Icon, iconName, iconSize, height = 33, label = "Swipe to next", fontSize = 18, width = "100%", onPress }) => {
     return (
-        <TouchableOpacity onPress={onPress} activeOpacity={0.8}>
+        <TouchableOpacity onPress={onPress} activeOpacity={0.8} style={{ width }}>
             <LinearGradient
                 colors={[Colors.BUTTON_GRADIENT_TWO, Colors.BUTTON_GRADIENT_ONE]}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 0 }}
-                style={styles.button}
+                style={[styles.button, { height: verticalScale(height) }]}
             >
-                <Text style={styles.text}>{label}</Text>
+                <Text style={[styles.text, { fontSize: scale(fontSize) }]}>{label}</Text>
                 <Spacer width={20} />
-                <AntDesign
-                    name="arrowright"
+                <Icon
+                    name={iconName}
                     color={Colors.WHITE}
-                    size={20}
+                    size={iconSize}
                     style={styles.cross}
                 />
             </LinearGradient>
@@ -33,18 +30,14 @@ export default GradientIconButton
 
 const styles = StyleSheet.create({
     button: {
-        paddingVertical: 12,
-        paddingHorizontal: 24,
         borderRadius: 6,
-        alignSelf: "center",
         flexDirection: "row",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
     },
     text: {
         color: Colors.WHITE,
-        fontWeight: "500",
-        fontSize: scale(13),
+        fontWeight: "700",
     },
 })
 

@@ -6,7 +6,6 @@ import HomeTopBar from '../../components/framework/navbar/HomeTopBar'
 import { StoryHighlightArea, SuggestionArea } from './home-mini-components'
 import SharedPost from '../../components/framework/card/SharedPost'
 import Spacer from '../../components/framework/boots/Spacer'
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 
 const HomePage = () => {
     const navigation = useNavigation();

@@ -54,8 +54,10 @@ const styles = StyleSheet.create({
     },
     title: {
         color: Colors.BLACK,
-        fontSize: scale(20),
-        fontWeight: "400",
+        fontSize: scale(22),
+        fontWeight: "500",
+        position: "absolute",
+        left: -35
     },
 
 })

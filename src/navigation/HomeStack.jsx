@@ -2,6 +2,9 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationStrings } from '../constants';
 import { CartScreen, NotificationScreen, SearchScreen, WalletScreen } from '../screens/app/home-stack-screens';
+import CheckoutPage from '../screens/app/home-stack-screens/CheckoutPage';
+import OrderSuccessfull from '../screens/app/home-stack-screens/OrderSuccessfull';
+import ViewOrder from '../screens/app/profile-stack-screens/sub-screen/ViewOrder';
 const HomeStack = () => {
     const Stack = createNativeStackNavigator();
 
@@ -11,6 +14,9 @@ const HomeStack = () => {
             <Stack.Screen name={NavigationStrings.HOME_SEARCH_SCREEN} component={SearchScreen} />
             <Stack.Screen name={NavigationStrings.HOME_WALLET_SCREEN} component={WalletScreen} />
             <Stack.Screen name={NavigationStrings.HOME_CART_SCREEN} component={CartScreen} />
+            <Stack.Screen name={NavigationStrings.HOME_CART_CHECKOUT_SCREEN} component={CheckoutPage} />
+            <Stack.Screen name={NavigationStrings.HOME_PLACE_ORDER_SCREEN} component={OrderSuccessfull} />
+            <Stack.Screen name={NavigationStrings.VIEW_ORDER} component={ViewOrder} />
 
 
         </Stack.Navigator>

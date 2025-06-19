@@ -2,6 +2,7 @@ export default {
     BLACK: "#000000",
     WHITE: "#FFFFFF",
     THEME: "#DD101F",
+    SILVER: "#777777",
     DULL_WHITE: "#dedcde",
     FADE: "#f0f0f0",
     BLUE: "#0c8ce9",
@@ -9,6 +10,7 @@ export default {
     FADE_TEXT: "#252525",
     LIGHT_GRAY: "#EBEBEB",
     HR_COLOR: "#B5B5B5",
+    BILLING_HEADER: "#E9E9E9",
 
 
 

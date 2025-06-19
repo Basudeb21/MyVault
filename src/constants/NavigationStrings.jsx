@@ -11,6 +11,9 @@ export default {
     CHAT_STACK: "ChatStack",
     PROFILE_STACK: "ProfileStack",
 
+    // Sub Screens
+    VIEW_ORDER: "ViewOrder",
+
 
 
     // Splash Screens
@@ -37,6 +40,8 @@ export default {
     HOME_SEARCH_SCREEN: "SearchScreen",
     HOME_WALLET_SCREEN: "WalletScreen",
     HOME_CART_SCREEN: "CartScreen",
+    HOME_CART_CHECKOUT_SCREEN: "CheckoutScreen",
+    HOME_PLACE_ORDER_SCREEN: "PlaceOrder",
 
 
     // Chat Stack Options
