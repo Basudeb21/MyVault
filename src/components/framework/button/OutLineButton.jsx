@@ -1,15 +1,12 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { scale, verticalScale } from 'react-native-size-matters';
-
 import { Colors } from '../../../constants';
-import Spacer from '../boots/Spacer';
 
 const OutLineButton = ({ label_one, label_two, onPress, width }) => {
     return (
         <TouchableOpacity style={[styles.btn, { width: width || "100%" }]} onPress={onPress}>
             <Text style={styles.btnTxt}>{label_one}</Text>
-            <Spacer width={5} />
             <Text style={[styles.btnTxt, { color: Colors.THEME }]}>{label_two}</Text>
 
         </TouchableOpacity>

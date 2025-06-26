@@ -10,6 +10,7 @@ export default {
     HOME_STACK: "HomeStack",
     CHAT_STACK: "ChatStack",
     PROFILE_STACK: "ProfileStack",
+    SETTINGS_STACK: "SettingsStack",
 
     // Sub Screens
     VIEW_ORDER: "ViewOrder",
@@ -17,6 +18,15 @@ export default {
     HOME_SHOP_SCREEN: "ShopScreen",
     HOME_SHOP_ITEM_INFO_PAGE: "ShopItemInfo",
     HOME_VIEW_LIST_CONTENT: "ViewListContent",
+    VIEW_TICKET_SCREEN: "ViewTicket",
+
+    // Outline Menu Screen
+    PROFILE_SHOP_SCREEN: "ProfileShopScreen",
+    PROFILE_EVENT_SCREEN: "ProfileEventScreen",
+    PROFILE_HELP_AND_SUPPORT_SCREEN: "ProfileHelpSupport",
+    PROFILE_SETTINGS_SCREEN: "ProfileScreen",
+    PROFILE_EVENT_DETAILS: "EventDetails",
+
 
 
 
@@ -60,5 +70,18 @@ export default {
     PROFILE_BOOKMARK_SCREEN: "ProfileBookmark",
     PROFILE_WALLET_SCREEN: "ProfileWallet",
     PROFILE_SUBSCRIPTIONS_SCREEN: "ProfileSubscription",
-    PROFILE_REFERALS_SCREEN: "ProfileReferal"
+    PROFILE_REFERALS_SCREEN: "ProfileReferal",
+
+
+    // Settings Stack Screens
+    SETTINGS_EDIT_PROFILE_SCREEN: "EditProfile",
+    SETTINGS_CHANGE_PASSWORD_SCREEN: "ChangePassword",
+    SETTINGS_EDIT_ADDRESS_SCREEN: "EditAddress",
+    SETTINGS_PAYMENT_SCREEN: "Payment",
+    SETTINGS_SUBSCRIPTION_PRICE_SCREEN: "SubcriptionPrice",
+    SETTINGS_PRIVACY_SCREEN: "Privacy",
+    SETTINGS_VERIFY_ID_SCREEN: "VerifyId",
+    SETTINGS_SUPPORT_TICKET_SCREEN: "SupportTicket",
+    SETTINGS_PROMOTION_SCREEN: "Promotion",
+
 }

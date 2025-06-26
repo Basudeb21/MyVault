@@ -11,8 +11,7 @@ export default {
     LIGHT_GRAY: "#EBEBEB",
     HR_COLOR: "#B5B5B5",
     BILLING_HEADER: "#E9E9E9",
-
-
+    PURPLE: "#93229f",
 
     PLACEHOLDER: "#6D6D6D",
     INPUTBOX_DEACTIVE_BORDER_COLOR: "#BFBFBF",

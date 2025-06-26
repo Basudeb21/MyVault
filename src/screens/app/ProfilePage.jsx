@@ -8,7 +8,7 @@ import FontAwesome5 from 'react-native-vector-icons/dist/FontAwesome5'
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome'
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons'
 import Entypo from 'react-native-vector-icons/dist/Entypo'
-import Ionicons from 'react-native-vector-icons/dist/Entypo'
+import Ionicons from 'react-native-vector-icons/dist/Ionicons'
 
 import Octicons from 'react-native-vector-icons/dist/Octicons'
 import FontAwesome6 from 'react-native-vector-icons/dist/FontAwesome6'
@@ -53,8 +53,8 @@ const ProfilePage = () => {
     }
 
     const onPressWallet = () => {
-        navigation.navigate(NavigationStrings.PROFILE_STACK, {
-            screen: NavigationStrings.PROFILE_WALLET_SCREEN
+        navigation.navigate(NavigationStrings.HOME_STACK, {
+            screen: NavigationStrings.HOME_WALLET_SCREEN
         })
     }
 
@@ -70,6 +70,31 @@ const ProfilePage = () => {
         })
     }
 
+    const onPressShop = () => {
+        navigation.navigate(NavigationStrings.PROFILE_STACK, {
+            screen: NavigationStrings.PROFILE_SHOP_SCREEN
+        })
+    }
+
+    const onPressEvents = () => {
+        navigation.navigate(NavigationStrings.PROFILE_STACK, {
+            screen: NavigationStrings.PROFILE_EVENT_SCREEN
+        })
+    }
+
+    const onPressHelpAndSupport = () => {
+        navigation.navigate(NavigationStrings.PROFILE_STACK, {
+            screen: NavigationStrings.PROFILE_HELP_AND_SUPPORT_SCREEN
+        })
+    }
+
+    const onPressSettings = () => {
+        navigation.navigate(NavigationStrings.PROFILE_STACK, {
+            screen: NavigationStrings.PROFILE_SETTINGS_SCREEN
+        })
+    }
+
+
 
 
     const cardData = [
@@ -84,10 +109,10 @@ const ProfilePage = () => {
     ]
 
     const buttonData = [
-        { id: 1, icon: Entypo, iconName: "shop", label: "Shop" },
-        { id: 2, icon: MaterialIcons, iconName: "event", label: "Events" },
-        { id: 3, icon: MaterialIcons, iconName: "support-agent", label: "Help and Support" },
-        { id: 4, icon: Ionicons, iconName: "shop", label: "settings-sharp" },
+        { id: 1, icon: Entypo, iconName: "shop", label: "Shop", onPress: onPressShop },
+        { id: 2, icon: MaterialIcons, iconName: "event", label: "Events", onPress: onPressEvents },
+        { id: 3, icon: MaterialIcons, iconName: "support-agent", label: "Help and Support", onPress: onPressHelpAndSupport },
+        { id: 4, icon: Ionicons, iconName: "settings-sharp", label: "Settings", onPress: onPressSettings },
     ]
 
     return (
@@ -97,7 +122,6 @@ const ProfilePage = () => {
             <Spacer height={75} />
 
             <FlatList
-
                 data={cardData}
                 keyExtractor={(item) => item.id.toString()}
                 numColumns={2}
@@ -121,6 +145,7 @@ const ProfilePage = () => {
                                     Icon={item.icon}
                                     iconName={item.iconName}
                                     label={item.label}
+                                    onPress={item.onPress}
                                 />
                             ))}
                         </View>

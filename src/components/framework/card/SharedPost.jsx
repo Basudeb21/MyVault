@@ -1,7 +1,6 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
-
 import BottomBar from '../navbar/shared-post-components/BottomBar'
 import Topbar from '../navbar/shared-post-components/Topbar'
 

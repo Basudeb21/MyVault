@@ -13,10 +13,6 @@ const StoryHighlight = ({ image, userName, userImage }) => {
                         style={styles.storyImg}
                         resizeMode='cover'
                     >
-                        <TouchableOpacity style={styles.userImgContainer}>
-                            <Image source={{ uri: userImage }} style={styles.userImg} />
-
-                        </TouchableOpacity>
                     </ImageBackground>
                 </View>
             </TouchableOpacity>

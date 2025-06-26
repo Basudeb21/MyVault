@@ -3,7 +3,6 @@ import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome'
 import Ionicons from 'react-native-vector-icons/dist/Ionicons'
-import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import { Colors, NavigationStrings } from '../../../constants';
 import { ChatPage, CreatePage, HomePage, LivePage, ProfilePage } from '../../../screens/app';
@@ -75,8 +74,8 @@ const BottomNavbar = () => {
                 options={{
                     tabBarLabel: NavigationStrings.LIVE_SCREEN,
                     tabBarIcon: ({ focused }) => (
-                        <MaterialIcons
-                            name="live-tv"
+                        <Ionicons
+                            name={focused ? "tv" : "tv-outline"}
                             size={24}
                             color={Colors.THEME}
                         />

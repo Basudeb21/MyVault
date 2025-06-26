@@ -1,0 +1,38 @@
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React from 'react'
+import { Colors } from '../../../constants'
+import Spacer from '../boots/Spacer'
+import HR from '../boots/HR'
+import { scale } from 'react-native-size-matters'
+
+const IconTxtHRInputButton = ({ Icon, icnonName, label }) => {
+    return (
+        <TouchableOpacity >
+            <View style={styles.row}>
+                <Icon
+                    name={icnonName}
+                    size={24}
+                    color={Colors.THEME}
+                />
+                <Spacer width={10} />
+                <Text style={styles.txt}>{label}</Text>
+            </View>
+            <Spacer height={10} />
+            <HR height={1} />
+        </TouchableOpacity>
+    )
+}
+
+export default IconTxtHRInputButton
+
+const styles = StyleSheet.create({
+    row: {
+        flexDirection: "row",
+        alignItems: "center"
+    },
+    txt: {
+        fontWeight: "500",
+        fontSize: scale(16),
+        color: Colors.THEME
+    }
+})
