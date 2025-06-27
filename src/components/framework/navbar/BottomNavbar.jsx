@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome'
 import Ionicons from 'react-native-vector-icons/dist/Ionicons'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
-import { Colors, NavigationStrings } from '../../../constants';
+import { Colors, Images, NavigationStrings } from '../../../constants';
 import { ChatPage, CreatePage, HomePage, LivePage, ProfilePage } from '../../../screens/app';
+import GradientIcon from '../icon/GradientIcon';
 
 
 
@@ -27,10 +28,11 @@ const BottomNavbar = () => {
                 options={{
                     tabBarLabel: NavigationStrings.HOME_SCREEN,
                     tabBarIcon: ({ focused }) => (
-                        <Ionicons
+                        <GradientIcon
                             name={focused ? "home" : "home-outline"}
                             size={24}
-                            color={Colors.THEME}
+                            IconPack={Ionicons}
+                            colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                         />
                     ),
                 }}
@@ -41,10 +43,11 @@ const BottomNavbar = () => {
                 options={{
                     tabBarLabel: NavigationStrings.CHAT_PAGE,
                     tabBarIcon: ({ focused }) => (
-                        <Ionicons
+                        <GradientIcon
                             name={focused ? "chatbubble-ellipses-sharp" : "chatbubble-ellipses-outline"}
                             size={24}
-                            color={Colors.THEME}
+                            IconPack={Ionicons}
+                            colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                         />
                     ),
                 }}
@@ -57,10 +60,11 @@ const BottomNavbar = () => {
                     tabBarLabel: NavigationStrings.CREATE_SCREEN,
                     tabBarIcon: ({ focused }) => (
                         <View style={styles.addIconContainer}>
-                            <Ionicons
+                            <GradientIcon
                                 name={focused ? 'add-circle' : 'add-circle-outline'}
                                 size={50}
-                                color={Colors.THEME}
+                                IconPack={Ionicons}
+                                colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                             />
                         </View>
                     ),
@@ -74,10 +78,11 @@ const BottomNavbar = () => {
                 options={{
                     tabBarLabel: NavigationStrings.LIVE_SCREEN,
                     tabBarIcon: ({ focused }) => (
-                        <Ionicons
+                        <GradientIcon
                             name={focused ? "tv" : "tv-outline"}
                             size={24}
-                            color={Colors.THEME}
+                            IconPack={Ionicons}
+                            colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                         />
                     ),
                 }}
@@ -90,11 +95,7 @@ const BottomNavbar = () => {
                 options={{
                     tabBarLabel: NavigationStrings.PROFILE_SCREEN,
                     tabBarIcon: ({ focused }) => (
-                        <FontAwesome
-                            name={focused ? "user" : "user-o"}
-                            size={24}
-                            color={Colors.THEME}
-                        />
+                        <Image source={{ uri: Images.CELEBRITY_AVATAR_ONE }} style={focused ? styles.active : styles.img} />
                     ),
                 }}
             />
@@ -122,4 +123,16 @@ const styles = StyleSheet.create({
         elevation: 5,
         alignSelf: 'center',
     },
+    img: {
+        width: moderateScale(27),
+        height: verticalScale(27),
+        borderRadius: scale(100),
+    },
+    active: {
+        width: moderateScale(27),
+        height: verticalScale(27),
+        borderRadius: scale(100),
+        borderWidth: scale(2),
+        borderColor: Colors.THEME
+    }
 })

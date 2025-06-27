@@ -8,7 +8,7 @@ import OutLineButton from '../../../components/framework/button/OutLineButton'
 import OrderTable from '../../../components/framework/boots/OrderTable'
 import Spacer from '../../../components/framework/boots/Spacer'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import TicketTable from '../../../components/framework/boots/TicketTable'
+import TicketTable from '../../../components/framework/tables/TicketTable'
 
 const Orders = () => {
     const [productButton, setProductButton] = useState(true);

@@ -2,14 +2,16 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Colors } from '../../../constants'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
+import GradientIcon from '../icon/GradientIcon'
 
 const ProfileSingleMenuCard = ({ Icon, iconName, text, onPress }) => {
     return (
         <TouchableOpacity style={styles.card} onPress={onPress}>
-            <Icon
+            <GradientIcon
                 name={iconName}
                 size={16}
-                color={Colors.THEME}
+                IconPack={Icon}
+                colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
             />
             <Text style={styles.text}>{text}</Text>
         </TouchableOpacity>

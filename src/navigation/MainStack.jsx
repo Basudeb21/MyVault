@@ -5,6 +5,7 @@ import HomeStack from './HomeStack';
 import ChatStack from './ChatStack';
 import BottomNavbar from '../components/framework/navbar/BottomNavbar';
 import ProfileStack from './ProfileStack';
+import PostStack from './PostStack';
 // import { BottomNavbar } from '../components/framework/navbar';
 
 const MainStack = () => {
@@ -28,6 +29,8 @@ const MainStack = () => {
                 name={NavigationStrings.PROFILE_STACK}
                 component={ProfileStack}
             />
+            <Stack.Screen name={NavigationStrings.POST_STACK} component={PostStack} />
+
         </Stack.Navigator>
     );
 };

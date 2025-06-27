@@ -4,8 +4,8 @@ import SearchBar from '../../../components/framework/input/SearchBar'
 import { Colors, Images } from '../../../constants'
 import BackpressTopBar from '../../../components/framework/navbar/BackpressTopBar'
 import Spacer from '../../../components/framework/boots/Spacer'
-import SimpleTable from '../../../components/framework/boots/SimpleTable'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import SimpleTable from '../../../components/framework/tables/SimpleTable'
 
 const Subscriptions = () => {
     const tableData = [

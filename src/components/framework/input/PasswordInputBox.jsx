@@ -1,6 +1,7 @@
 import { StyleSheet, TextInput, View, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { moderateScale, scale } from 'react-native-size-matters';
+import LinearGradient from 'react-native-linear-gradient';
 
 import { Colors } from '../../../constants';
 import Icon from 'react-native-vector-icons/Feather';
@@ -25,13 +26,18 @@ const PasswordInputBox = ({ value, setValue, placeholder }) => {
                 onBlur={() => setIsFocused(false)}
             />
             <TouchableOpacity onPress={() => setSecure(!secure)}>
-                <View style={styles.iconContainer}>
+                <LinearGradient
+                    colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 1 }}
+                    style={styles.iconContainer}
+                >
                     <Icon
                         name={secure ? 'eye-off' : 'eye'}
                         size={scale(20)}
                         color={Colors.WHITE}
                     />
-                </View>
+                </LinearGradient>
             </TouchableOpacity>
         </View>
     );

@@ -12,6 +12,7 @@ import Spacer from '../../components/framework/boots/Spacer'
 import ThreeDots from '../../components/framework/micro/ThreeDots'
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { BODY_ARR, BTN_LABEL_ARR, HEAD_TXT_ARR, SPLASH_IMG_ARR } from '../../data/SplashScreenData';
 
 
 const SplashInfo = () => {
@@ -20,32 +21,13 @@ const SplashInfo = () => {
     const navigator = useNavigation();
 
 
-    const img_arr = [
-        Images.SPLASH_CELEB_ONE,
-        Images.SPLASH_CELEB_TWO,
-        Images.SPLASH_CELEB_THREE
-    ];
+    const img_arr = SPLASH_IMG_ARR;
 
-    const head_txt_arr = [
-        'Welcome to ',
-        'My Vault',
-        "Communicate with Celebrities",
-        "Unlimited Post Share"
+    const head_txt_arr = HEAD_TXT_ARR;
 
-    ];
+    const body_txt_arr = BODY_ARR;
 
-    const body_txt_arr = [
-        "Lorem ipsum dolor sit amet consectetur. Fermentum adipiscing morbi egestas leo diam quis consequat. Accumsan venenatis aenean purus et faucibus cras.",
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quisquam in sint beatae totam aliquam, sapiente eius nostrum consequuntur id cumque repudiandae, consequatur libero ipsam.",
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum fuga natus facere voluptates, eligendi consequuntur facilis necessitatibus nemo."
-
-    ];
-
-    const btn_label = [
-        "Swipe to Next",
-        "Swipe to Next",
-        "Get Started",
-    ]
+    const btn_label = BTN_LABEL_ARR;
 
 
     const handleNext = () => {

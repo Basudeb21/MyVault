@@ -5,24 +5,24 @@ import Ionicons from 'react-native-vector-icons/dist/Ionicons'
 import { Colors } from '../../../constants'
 
 
-const SelfStoryHighLight = ({ image, userName, userImg }) => {
+const SelfStoryHighLight = ({ image, userName, userImg, onPress }) => {
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.storyContainer}>
+            <TouchableOpacity style={styles.storyContainer} >
                 <View style={styles.imageWrapper}>
                     <ImageBackground
                         source={{ uri: image }}
                         style={styles.storyImg}
                         resizeMode='cover'
                     >
-                        <TouchableOpacity style={styles.userImgContainer}>
+                        <TouchableOpacity style={styles.userImgContainer} onPress={onPress}>
                             <Image source={{ uri: userImg }} style={styles.userImg} />
 
                         </TouchableOpacity>
                     </ImageBackground>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.storyAddBtn}>
+            <TouchableOpacity style={styles.storyAddBtn} onPress={onPress}>
                 <Ionicons
                     name={'add-circle'}
                     size={25}

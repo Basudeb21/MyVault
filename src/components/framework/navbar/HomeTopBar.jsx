@@ -8,10 +8,13 @@ import SimpleLineIcons from 'react-native-vector-icons/dist/SimpleLineIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import { Colors, Images } from '../../../constants';
 import Spacer from '../boots/Spacer';
+import GradientIcon from '../icon/GradientIcon';
 
 
 
 const HomeTopBar = ({ notificationOnPress, searchOnPress, walletOnPress, cartOnPress }) => {
+    const ICON_SIZE = 20;
+    const ICON_SPACE = 8;
     return (
         <View style={styles.container}>
             <FastImage
@@ -21,36 +24,40 @@ const HomeTopBar = ({ notificationOnPress, searchOnPress, walletOnPress, cartOnP
             />
             <View style={styles.iconContainer}>
                 <TouchableOpacity onPress={searchOnPress}>
-                    <AntDesign
-                        name="search1"
-                        size={24}
-                        color={Colors.THEME}
+                    <GradientIcon
+                        name={"search1"}
+                        size={ICON_SIZE}
+                        IconPack={AntDesign}
+                        colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                     />
                 </TouchableOpacity>
-                <Spacer width={12} />
+                <Spacer width={ICON_SPACE} />
                 <TouchableOpacity onPress={notificationOnPress}>
-                    <Ionicons
+                    <GradientIcon
                         name="notifications-outline"
-                        size={24}
-                        color={Colors.THEME}
+                        size={ICON_SIZE}
+                        IconPack={Ionicons}
+                        colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                     />
                 </TouchableOpacity>
-                <Spacer width={12} />
+                <Spacer width={ICON_SPACE} />
 
                 <TouchableOpacity onPress={walletOnPress}>
-                    <SimpleLineIcons
+                    <GradientIcon
                         name="wallet"
-                        size={24}
-                        color={Colors.THEME}
+                        size={ICON_SIZE}
+                        IconPack={SimpleLineIcons}
+                        colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                     />
                 </TouchableOpacity>
-                <Spacer width={12} />
+                <Spacer width={ICON_SPACE} />
 
                 <TouchableOpacity onPress={cartOnPress}>
-                    <MaterialCommunityIcons
+                    <GradientIcon
                         name="cart-variant"
-                        size={24}
-                        color={Colors.THEME}
+                        size={ICON_SIZE}
+                        IconPack={MaterialCommunityIcons}
+                        colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                     />
                 </TouchableOpacity>
             </View>
@@ -71,7 +78,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        marginEnd: verticalScale(20),
+        marginEnd: verticalScale(8),
         justifyContent: "space-evenly"
     },
     logo: {

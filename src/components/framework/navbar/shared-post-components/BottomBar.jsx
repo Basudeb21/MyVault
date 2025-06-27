@@ -5,19 +5,37 @@ import Ionicons from 'react-native-vector-icons/dist/Ionicons'
 import Entypo from 'react-native-vector-icons/dist/Entypo'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 
-import { Colors } from '../../../../constants'
+import { Colors, NavigationStrings } from '../../../../constants'
+import { useNavigation } from '@react-navigation/native'
+import SendTipsModal from '../../modal/SendTipsModal'
 
 const BottomBar = ({ focused = true }) => {
     const [favoriteFocused, setFavoriteFocused] = useState(false);
     const [commentFocused, setCommentFocused] = useState(false);
     const [giftFocused, setGiftFocused] = useState(false);
 
+    const navigation = useNavigation();
     const handleSetFavorite = () => {
         setFavoriteFocused(!favoriteFocused);
     }
 
+    const openReacts = () => {
+        navigation.navigate(NavigationStrings.POST_STACK, {
+            screen: NavigationStrings.ALL_REACTS
+        })
+    }
+
+    const openTips = () => {
+        navigation.navigate(NavigationStrings.POST_STACK, {
+            screen: NavigationStrings.ALL_TIPS
+        })
+    }
+
     const handleSetComment = () => {
         setCommentFocused(!commentFocused);
+        navigation.navigate(NavigationStrings.POST_STACK, {
+            screen: NavigationStrings.ALL_COMMENTS
+        })
     }
 
     const handleSetGift = () => {
@@ -33,7 +51,9 @@ const BottomBar = ({ focused = true }) => {
                         size={24}
                         color={favoriteFocused ? Colors.THEME : Colors.BLACK}
                     />
-                    <Text style={styles.counter}>50K</Text>
+                    <TouchableOpacity onPress={openReacts}>
+                        <Text style={styles.counter}>50K</Text>
+                    </TouchableOpacity>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.iconContainer} onPress={handleSetComment}>
                     <Ionicons
@@ -49,7 +69,7 @@ const BottomBar = ({ focused = true }) => {
                         size={24}
                         color={giftFocused ? Colors.YELLOW : Colors.BLACK}
                     />
-                    <Text style={styles.counter}>32</Text>
+                    <TouchableOpacity onPress={openTips}><Text style={styles.counter}>32</Text></TouchableOpacity>
                 </TouchableOpacity>
             </View>
             <View style={styles.right}>
@@ -61,6 +81,13 @@ const BottomBar = ({ focused = true }) => {
                     style={styles.icon}
                 />
             </View>
+            {giftFocused && (
+                <SendTipsModal
+                    visible={giftFocused}
+                    onClose={() => setGiftFocused(false)}
+                />
+            )}
+
         </View>
     )
 }

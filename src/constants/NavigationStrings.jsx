@@ -11,6 +11,7 @@ export default {
     CHAT_STACK: "ChatStack",
     PROFILE_STACK: "ProfileStack",
     SETTINGS_STACK: "SettingsStack",
+    POST_STACK: "PostStack",
 
     // Sub Screens
     VIEW_ORDER: "ViewOrder",
@@ -19,6 +20,7 @@ export default {
     HOME_SHOP_ITEM_INFO_PAGE: "ShopItemInfo",
     HOME_VIEW_LIST_CONTENT: "ViewListContent",
     VIEW_TICKET_SCREEN: "ViewTicket",
+
 
     // Outline Menu Screen
     PROFILE_SHOP_SCREEN: "ProfileShopScreen",
@@ -56,6 +58,7 @@ export default {
     HOME_CART_SCREEN: "CartScreen",
     HOME_CART_CHECKOUT_SCREEN: "CheckoutScreen",
     HOME_PLACE_ORDER_SCREEN: "PlaceOrder",
+    HOME_VIEW_STORY: "OpenStory",
 
 
     // Chat Stack Options
@@ -83,5 +86,10 @@ export default {
     SETTINGS_VERIFY_ID_SCREEN: "VerifyId",
     SETTINGS_SUPPORT_TICKET_SCREEN: "SupportTicket",
     SETTINGS_PROMOTION_SCREEN: "Promotion",
+
+    // Post Screens
+    ALL_REACTS: "AllReacts",
+    ALL_COMMENTS: "AllComments",
+    ALL_TIPS: "AllTips"
 
 }

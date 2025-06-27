@@ -23,6 +23,7 @@ const CreatePage = () => {
                 <TextArea placeholder='Write a new post, drag and drop files to add attachments.' height={150} />
 
                 <View style={styles.iconBtnContainer}>
+
                     <IconTxtHRInputButton
                         Icon={Fontisto}
                         icnonName={"photograph"}

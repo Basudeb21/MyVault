@@ -5,6 +5,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 
 import HR from '../boots/HR';
+import GradientIcon from '../icon/GradientIcon';
 
 const ChatFriendCard = ({ image, fanName, fanActiveTime, onPress }) => {
     return (
@@ -18,10 +19,12 @@ const ChatFriendCard = ({ image, fanName, fanActiveTime, onPress }) => {
                 </View>
 
                 <View style={styles.rightIconContainer}>
-                    <Ionicons
+
+                    <GradientIcon
                         name={"logo-wechat"}
                         size={24}
-                        color={Colors.THEME}
+                        IconPack={Ionicons}
+                        colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                     />
                 </View>
             </View>

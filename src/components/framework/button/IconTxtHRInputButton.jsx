@@ -4,16 +4,19 @@ import { Colors } from '../../../constants'
 import Spacer from '../boots/Spacer'
 import HR from '../boots/HR'
 import { scale } from 'react-native-size-matters'
+import GradientIcon from '../icon/GradientIcon'
 
 const IconTxtHRInputButton = ({ Icon, icnonName, label }) => {
     return (
         <TouchableOpacity >
             <View style={styles.row}>
-                <Icon
+                <GradientIcon
                     name={icnonName}
                     size={24}
-                    color={Colors.THEME}
+                    IconPack={Icon}
+                    colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                 />
+
                 <Spacer width={10} />
                 <Text style={styles.txt}>{label}</Text>
             </View>

@@ -2,10 +2,10 @@ import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react
 import React from 'react';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import { Colors, Images, NavigationStrings } from '../../../constants';
-import HR from './HR';
-import Spacer from './Spacer';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
+import Spacer from '../boots/Spacer';
+import HR from '../boots/HR';
 
 
 const COLUMN_WIDTHS = {

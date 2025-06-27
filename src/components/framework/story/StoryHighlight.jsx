@@ -3,23 +3,22 @@ import React from 'react'
 import { Colors } from '../../../constants'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
 
-const StoryHighlight = ({ image, userName, userImage }) => {
+const StoryHighlight = ({ image, userName, onPress }) => {
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.storyContainer}>
+            <TouchableOpacity style={styles.storyContainer} onPress={onPress}>
                 <View style={styles.imageWrapper}>
                     <ImageBackground
                         source={{ uri: image }}
                         style={styles.storyImg}
                         resizeMode='cover'
-                    >
-                    </ImageBackground>
+                    />
                 </View>
             </TouchableOpacity>
             <Text style={styles.userName}>{userName}</Text>
         </View>
-    )
-}
+    );
+};
 
 export default StoryHighlight
 
@@ -29,10 +28,11 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center"
     },
+
     storyContainer: {
         alignSelf: "flex-start",
         padding: scale(3),
-        marginStart: moderateScale(10),
+        marginStart: moderateScale(1),
     },
 
     imageWrapper: {
