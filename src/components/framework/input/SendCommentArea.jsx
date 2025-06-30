@@ -2,12 +2,10 @@ import { StyleSheet, TextInput, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Colors } from '../../../constants'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import Fontisto from 'react-native-vector-icons/Fontisto'
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 import { moderateScale, verticalScale } from 'react-native-size-matters'
 import GradientIcon from '../icon/GradientIcon'
 
-const MessageSendArea = ({ placeholder, value, setValue }) => {
+const SendCommentArea = ({ placeholder, value, setValue }) => {
     return (
         <View style={styles.container}>
             <TextInput
@@ -23,22 +21,6 @@ const MessageSendArea = ({ placeholder, value, setValue }) => {
             <View style={styles.btnContainer}>
                 <TouchableOpacity style={styles.icon}>
                     <GradientIcon
-                        name={"add-photo-alternate"}
-                        size={28}
-                        IconPack={MaterialIcons}
-                        colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
-                    />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.icon}>
-                    <GradientIcon
-                        name={"hipchat"}
-                        size={20}
-                        IconPack={Fontisto}
-                        colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
-                    />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.icon}>
-                    <GradientIcon
                         name={"send-circle"}
                         size={32}
                         IconPack={MaterialCommunityIcons}
@@ -50,11 +32,11 @@ const MessageSendArea = ({ placeholder, value, setValue }) => {
     )
 }
 
-export default MessageSendArea
+export default SendCommentArea
 
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal: moderateScale(20),
+        marginHorizontal: moderateScale(14),
         backgroundColor: Colors.LIGHT_GRAY,
         borderRadius: 25,
         paddingHorizontal: moderateScale(15),
@@ -63,6 +45,9 @@ const styles = StyleSheet.create({
         alignItems: "flex-end",
         marginBottom: verticalScale(10),
         marginTop: verticalScale(10),
+        position: "absolute",
+        bottom: 0,
+        alignSelf: "center"
     },
     inputBox: {
         flex: 1,

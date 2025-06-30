@@ -6,9 +6,10 @@ import { moderateScale } from 'react-native-size-matters';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome'
 import PressableViewProfilePostTopArea from './PressableViewProfilePostTopArea';
 import { useNavigation } from '@react-navigation/native';
+import GradientIcon from '../../icon/GradientIcon';
 
 const Topbar = ({ userAvatar, userName }) => {
-    const [focused, setFocused] = useState(true);
+    const [focused, setFocused] = useState(false);
     const handleOnpress = () => {
         setFocused(!focused);
     }
@@ -23,18 +24,20 @@ const Topbar = ({ userAvatar, userName }) => {
     return (
         <View style={styles.container}>
 
-            <PressableViewProfilePostTopArea
-                userAvatar={userAvatar}
-                userName={userName}
-                userID={"@u987654321"}
-                onPress={handlePressProfileIcon}
-            />
+            <View style={styles.top}>
+                <PressableViewProfilePostTopArea
+                    userAvatar={userAvatar}
+                    userName={userName}
+                    userID={"@u987654321"}
+                    onPress={handlePressProfileIcon}
+                />
+            </View>
             <TouchableOpacity onPress={handleOnpress}>
-                <FontAwesome
+                <GradientIcon
                     name={focused ? "bookmark" : "bookmark-o"}
                     size={24}
-                    color={Colors.BLACK}
-                    style={styles.bookmark}
+                    IconPack={FontAwesome}
+                    colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                 />
             </TouchableOpacity>
         </View>
@@ -45,10 +48,13 @@ export default Topbar
 
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: moderateScale(20),
+        paddingRight: moderateScale(20),
         flexDirection: "row",
         width: "100%",
         justifyContent: "space-between",
+    },
+    top: {
+        marginStart: moderateScale(10)
     },
 
     bookmark: {

@@ -5,6 +5,7 @@ import Ionicons from 'react-native-vector-icons/dist/Ionicons'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 
 import { Colors } from '../../../constants';
+import GradientIcon from '../icon/GradientIcon';
 
 const ChatBackPressTopBar = ({ info }) => {
     const navigation = useNavigation();
@@ -15,11 +16,13 @@ const ChatBackPressTopBar = ({ info }) => {
         <View style={styles.container}>
             <View style={styles.sideContainer}>
                 <TouchableOpacity onPress={handleBackPress}>
-                    <Ionicons
-                        name="arrow-back-outline"
+                    <GradientIcon
+                        name={"arrow-back-outline"}
                         size={24}
-                        color={Colors.BLACK}
+                        IconPack={Ionicons}
+                        colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                     />
+
                 </TouchableOpacity>
             </View>
 

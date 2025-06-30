@@ -90,6 +90,7 @@ export default {
     // Post Screens
     ALL_REACTS: "AllReacts",
     ALL_COMMENTS: "AllComments",
-    ALL_TIPS: "AllTips"
+    ALL_TIPS: "AllTips",
+    LIVE_SHOWS: "LiveShow"
 
 }

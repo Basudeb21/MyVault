@@ -3,11 +3,12 @@ import React, { useState } from 'react'
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons'
 import Ionicons from 'react-native-vector-icons/dist/Ionicons'
 import Entypo from 'react-native-vector-icons/dist/Entypo'
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import { moderateScale, verticalScale } from 'react-native-size-matters';
 
 import { Colors, NavigationStrings } from '../../../../constants'
 import { useNavigation } from '@react-navigation/native'
 import SendTipsModal from '../../modal/SendTipsModal'
+import GradientIcon from '../../icon/GradientIcon'
 
 const BottomBar = ({ focused = true }) => {
     const [favoriteFocused, setFavoriteFocused] = useState(false);
@@ -17,12 +18,6 @@ const BottomBar = ({ focused = true }) => {
     const navigation = useNavigation();
     const handleSetFavorite = () => {
         setFavoriteFocused(!favoriteFocused);
-    }
-
-    const openReacts = () => {
-        navigation.navigate(NavigationStrings.POST_STACK, {
-            screen: NavigationStrings.ALL_REACTS
-        })
     }
 
     const openTips = () => {
@@ -46,20 +41,19 @@ const BottomBar = ({ focused = true }) => {
         <View style={styles.container}>
             <View style={styles.left}>
                 <TouchableOpacity style={styles.iconContainer} onPress={handleSetFavorite}>
-                    <MaterialIcons
+                    <GradientIcon
                         name={favoriteFocused ? "favorite" : "favorite-border"}
                         size={24}
-                        color={favoriteFocused ? Colors.THEME : Colors.BLACK}
+                        IconPack={MaterialIcons}
+                        colors={favoriteFocused ? [Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO] : [Colors.BLACK, Colors.BLACK]}
                     />
-                    <TouchableOpacity onPress={openReacts}>
-                        <Text style={styles.counter}>50K</Text>
-                    </TouchableOpacity>
+                    <Text style={styles.counter}>50K</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.iconContainer} onPress={handleSetComment}>
                     <Ionicons
-                        name={commentFocused ? "chatbox-ellipses" : "chatbox-ellipses-outline"}
+                        name={"chatbox-ellipses-outline"}
                         size={24}
-                        color={commentFocused ? Colors.BLUE : Colors.BLACK}
+                        color={Colors.BLACK}
                     />
                     <Text style={styles.counter}>1.2K</Text>
                 </TouchableOpacity>
@@ -99,7 +93,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        marginHorizontal: moderateScale(10)
     },
     left: {
         flexDirection: "row",

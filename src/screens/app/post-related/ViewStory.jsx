@@ -13,6 +13,7 @@ import { Colors, Images } from '../../../constants';
 import StoryHead from '../../../components/framework/navbar/StoryHead';
 import { useNavigation } from '@react-navigation/native';
 import StoryBottom from '../../../components/framework/navbar/StoryBottom';
+import StoryViewButtonGroup from '../../../components/framework/button/StoryViewButtonGroup';
 
 const { width } = Dimensions.get('window');
 
@@ -36,8 +37,9 @@ const ViewStory = () => {
     const animationRef = useRef(null);
     const hasFinished = useRef(false);
     const navigation = useNavigation();
-
     const currentStory = storyList[currentIndex];
+
+
 
     useEffect(() => {
         if (!currentStory?.story) return;
@@ -123,9 +125,9 @@ const ViewStory = () => {
 
     return (
         <View style={styles.container}>
+            <StoryViewButtonGroup />
             <TouchableOpacity style={styles.leftTouch} onPress={handlePrev} />
             <TouchableOpacity style={styles.rightTouch} onPress={handleNext} />
-
             <TouchableWithoutFeedback
                 onPressIn={pauseProgress}
                 onPressOut={resumeProgress}
@@ -134,7 +136,7 @@ const ViewStory = () => {
                     <ImageBackground
                         source={{ uri: currentStory.story }}
                         style={[styles.storyImage, { height: imageHeight }]}
-                        resizeMode="contain"
+                        resizeMode="stretch"
                     />
                 </View>
             </TouchableWithoutFeedback>
@@ -148,7 +150,7 @@ const ViewStory = () => {
                                     style={[
                                         styles.progressBarFill,
                                         {
-                                            backgroundColor: Colors.WHITE,
+                                            backgroundColor: Colors.THEME,
                                             width: progress.interpolate({
                                                 inputRange: [0, 1],
                                                 outputRange: ['0%', '100%'],
@@ -162,7 +164,7 @@ const ViewStory = () => {
                                         styles.progressBarFill,
                                         {
                                             backgroundColor:
-                                                index < currentIndex ? Colors.WHITE : Colors.PLACEHOLDER,
+                                                index < currentIndex ? Colors.THEME : Colors.PLACEHOLDER,
                                             width: '100%',
                                         },
                                     ]}
@@ -174,7 +176,6 @@ const ViewStory = () => {
 
                 <StoryHead title="Fans_5" time={currentStory.time} />
             </View>
-            <StoryBottom />
         </View>
     );
 };

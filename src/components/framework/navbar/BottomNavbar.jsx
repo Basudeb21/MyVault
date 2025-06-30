@@ -1,7 +1,6 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import FontAwesome from 'react-native-vector-icons/dist/FontAwesome'
 import Ionicons from 'react-native-vector-icons/dist/Ionicons'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import { Colors, Images, NavigationStrings } from '../../../constants';

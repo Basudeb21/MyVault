@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { Images, NavigationStrings } from '../../constants'
+import { Colors, Images, NavigationStrings } from '../../constants'
 import { useNavigation } from '@react-navigation/native'
 import HomeTopBar from '../../components/framework/navbar/HomeTopBar'
 import { StoryHighlightArea, SuggestionArea } from './home-mini-components'
@@ -37,7 +37,7 @@ const HomePage = () => {
 
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1, backgroundColor: Colors.WHITE }}>
             <HomeTopBar
                 searchOnPress={handleSearchPress}
                 notificationOnPress={handleNotificationPress}
@@ -54,7 +54,7 @@ const HomePage = () => {
                     <SharedPost userAvatar={Images.CELEBRITY_AVATAR_FOUR} postImage={Images.POST_FOUR} userName={"Fans_1"} />
                     <SharedPost userAvatar={Images.CELEBRITY_AVATAR_FIVE} postImage={Images.POST_FIVE} userName={"Fans_6"} />
                 </ScrollView>
-                <Spacer height={150} />
+                <Spacer height={100} />
             </ScrollView>
         </SafeAreaView>
     )

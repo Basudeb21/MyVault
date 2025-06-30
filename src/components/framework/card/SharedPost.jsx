@@ -22,10 +22,10 @@ export default SharedPost
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: verticalScale(40)
+        marginTop: verticalScale(20)
     },
     postImage: {
-        marginTop: verticalScale(20),
+        marginTop: verticalScale(10),
         width: "100%",
         height: verticalScale(220)
     }
