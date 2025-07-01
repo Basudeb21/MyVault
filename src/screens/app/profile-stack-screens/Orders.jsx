@@ -57,7 +57,7 @@ const Orders = () => {
         <SafeAreaView style={styles.container}>
             <BackpressTopBar title={"Orders"} />
             <ScrollView>
-                <Text style={styles.headText}>Your active product</Text>
+                <Text style={styles.headText}>Your active tickets</Text>
                 <View style={styles.btnRow}>
                     {productButton ? <GradientTextButton label='Product' width='45%' /> : <OutLineButton label_two={"Product"} width={"45%"} onPress={onPressProducts} />}
                     {ticketButton ? <GradientTextButton label='Tickets' width='45%' /> : <OutLineButton label_two={"Tickets"} width={"45%"} onPress={onPressTickets} />}

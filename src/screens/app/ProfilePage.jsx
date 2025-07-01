@@ -29,8 +29,8 @@ const ProfilePage = () => {
     }
 
     const onPressStreams = () => {
-        navigation.navigate(NavigationStrings.PROFILE_STACK, {
-            screen: NavigationStrings.PROFILE_STREAM_SCREEN
+        navigation.navigate(NavigationStrings.POST_STACK, {
+            screen: NavigationStrings.LIVE_SHOWS
         })
     }
 
@@ -117,11 +117,16 @@ const ProfilePage = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <BackpressProfileTopBar title={"Myprofile_4321"} />
-            <ProfileCard />
-            <Spacer height={75} />
 
             <FlatList
+                ListHeaderComponent={
+                    <View>
+                        <BackpressProfileTopBar title={"Myprofile_4321"} />
+                        <ProfileCard />
+                        <Spacer height={75} />
+
+                    </View>
+                }
                 data={cardData}
                 keyExtractor={(item) => item.id.toString()}
                 numColumns={2}
@@ -150,8 +155,10 @@ const ProfilePage = () => {
                             ))}
                         </View>
                         <Spacer height={20} />
-                        <OutLineButton label_two={"Logout"} />
-                        <Spacer height={50} />
+                        <View style={{ justifyContent: "center", alignItems: "center" }}>
+                            <OutLineButton label_two={"Logout"} width={"90%"} />
+                        </View>
+                        <Spacer height={20} />
 
                     </>
                 }
@@ -169,14 +176,18 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.WHITE
     },
     contentContainer: {
-        paddingHorizontal: moderateScale(16),
+        // paddingHorizontal: moderateScale(16),
         paddingBottom: verticalScale(20),
     },
     row: {
         justifyContent: 'space-between',
         marginBottom: verticalScale(12),
+        paddingHorizontal: moderateScale(16),
+        gap: moderateScale(15)
     },
     btnContainer: {
         marginTop: verticalScale(20),
+        paddingHorizontal: moderateScale(16),
+        gap: moderateScale(15)
     }
 })

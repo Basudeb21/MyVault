@@ -14,7 +14,7 @@ import { Colors } from '../../../constants';
 
 const WalletScreen = () => {
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1, backgroundColor: Colors.WHITE }}>
             <BackpressTopBar title={"Wallet"} />
             <View style={styles.topContainer}>
                 <Text>Your payments and Wallet</Text>

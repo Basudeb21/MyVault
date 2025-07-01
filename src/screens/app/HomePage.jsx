@@ -54,7 +54,7 @@ const HomePage = () => {
                     <SharedPost userAvatar={Images.CELEBRITY_AVATAR_FOUR} postImage={Images.POST_FOUR} userName={"Fans_1"} />
                     <SharedPost userAvatar={Images.CELEBRITY_AVATAR_FIVE} postImage={Images.POST_FIVE} userName={"Fans_6"} />
                 </ScrollView>
-                <Spacer height={100} />
+                <Spacer height={40} />
             </ScrollView>
         </SafeAreaView>
     )

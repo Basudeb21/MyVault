@@ -6,10 +6,11 @@ import { moderateScale, verticalScale } from 'react-native-size-matters'
 import PasswordInputBox from '../../../../../components/framework/input/PasswordInputBox'
 import Spacer from '../../../../../components/framework/boots/Spacer'
 import GradientTextButton from '../../../../../components/framework/button/GradientTextButton'
+import { Colors } from '../../../../../constants'
 
 const ChangePassword = () => {
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1, backgroundColor: Colors.WHITE }}>
             <BackpressTopBar title={"Change Password"} />
             <View style={styles.form}>
                 <PasswordInputBox placeholder={"Enter your current password"} />

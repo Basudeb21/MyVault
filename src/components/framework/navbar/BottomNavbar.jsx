@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons'
+import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import { Colors, Images, NavigationStrings } from '../../../constants';
 import { ChatPage, CreatePage, HomePage, LivePage, ProfilePage } from '../../../screens/app';
@@ -78,9 +79,9 @@ const BottomNavbar = () => {
                     tabBarLabel: NavigationStrings.LIVE_SCREEN,
                     tabBarIcon: ({ focused }) => (
                         <GradientIcon
-                            name={focused ? "tv" : "tv-outline"}
+                            name={"live-tv"}
                             size={24}
-                            IconPack={Ionicons}
+                            IconPack={MaterialIcons}
                             colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                         />
                     ),
@@ -108,8 +109,8 @@ export default BottomNavbar
 const styles = StyleSheet.create({
 
     addIconContainer: {
-        width: moderateScale(60),
-        height: verticalScale(60),
+        width: moderateScale(56),
+        height: verticalScale(50),
         borderRadius: scale(35),
         backgroundColor: Colors.WHITE,
         alignItems: 'center',

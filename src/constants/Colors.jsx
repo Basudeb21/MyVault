@@ -27,4 +27,8 @@ export default {
     BUTTON_GRADIENT_TWO: "#EE2925",
     USER_ID_NAME: "#979797",
 
+    PRIORITY_LOW: "#4CAF50",
+    PRIORITY_MIDIUM: "#FFC107",
+    PRIORITY_HIGH: "#FF4C4C"
+
 }

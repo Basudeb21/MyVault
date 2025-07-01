@@ -1,10 +1,11 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
-
 import { Colors } from '../../../constants';
 import Spacer from '../boots/Spacer';
-import GradientTextButton from '../button/GradientTextButton';
+import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
+import Ionicons from 'react-native-vector-icons/dist/Ionicons';
+import GradientIconButtonNoText from '../button/GradientIconButtonNoText';
 
 
 const SuggestionUserCard = ({ userImage }) => {
@@ -14,8 +15,22 @@ const SuggestionUserCard = ({ userImage }) => {
             <Text style={styles.userName}>NorwegianNerd</Text>
             <Text style={styles.userID}>@u987654321</Text>
             <Spacer height={20} />
-            <GradientTextButton label='Subscribe' height={20} fontSize={10} width='80%' />
+            <GradientIconButtonNoText
+                Icon={MaterialIcons}
+                iconName={"subscriptions"}
+                iconSize={14}
+                width='90%'
+                height={27}
 
+            />
+            <Spacer height={5} />
+            <GradientIconButtonNoText
+                Icon={Ionicons}
+                iconName={"person-add"}
+                iconSize={14}
+                width='90%'
+                height={27}
+            />
         </View>
     )
 }
@@ -25,7 +40,7 @@ export default SuggestionUserCard
 const styles = StyleSheet.create({
     container: {
         width: moderateScale(150),
-        height: verticalScale(219),
+        height: verticalScale(240),
         borderColor: Colors.PLACEHOLDER,
         borderWidth: scale(1),
         borderRadius: scale(8),

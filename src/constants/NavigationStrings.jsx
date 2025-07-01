@@ -12,6 +12,7 @@ export default {
     PROFILE_STACK: "ProfileStack",
     SETTINGS_STACK: "SettingsStack",
     POST_STACK: "PostStack",
+    LIVE_STACK: "LiveStack",
 
     // Sub Screens
     VIEW_ORDER: "ViewOrder",
@@ -86,6 +87,7 @@ export default {
     SETTINGS_VERIFY_ID_SCREEN: "VerifyId",
     SETTINGS_SUPPORT_TICKET_SCREEN: "SupportTicket",
     SETTINGS_PROMOTION_SCREEN: "Promotion",
+    SETTINGS_ADD_SUPPORT_TICKET_SCREEN: "SupportTicketScreen",
 
     // Post Screens
     ALL_REACTS: "AllReacts",

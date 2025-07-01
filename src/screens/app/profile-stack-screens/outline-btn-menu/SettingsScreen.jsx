@@ -78,14 +78,12 @@ const SettingsScreen = () => {
         { id: 2, Icon: Entypo, iconName: "key", text: "Change Your Password", onPress: onPressChangePassword },
         { id: 3, Icon: FontAwesome6, iconName: "map-location-dot", text: "Edit Address", onPress: onPressEditAddress },
         { id: 4, Icon: Entypo, iconName: "credit-card", text: "Payments", onPress: onPressPayments },
-        { id: 5, Icon: FontAwesome6, iconName: "tags", text: "Subscription Price", onPress: onPressSubscribtionPrice },
         { id: 6, Icon: FontAwesome6, iconName: "user-shield", text: "Privacy", onPress: onPressPrivacy },
         { id: 7, Icon: MaterialIcons, iconName: "verified", text: "Verify", onPress: onPressVerify },
         { id: 8, Icon: Fontisto, iconName: "ticket-alt", text: "Support Ticket", onPress: onPressSupportTicket },
-        { id: 9, Icon: FontAwesome5, iconName: "bullhorn", text: "Promotion", onPress: onPressPromotion },
     ]
     return (
-        <View>
+        <View style={{ backgroundColor: Colors.WHITE, flex: 1 }}>
             <BackpressTopBar title={"Settings"} />
             <Text style={styles.txt}>Manage your account</Text>
             <Spacer height={20} />

@@ -10,6 +10,7 @@ import Privacy from '../screens/app/profile-stack-screens/outline-btn-menu/setti
 import Verify from '../screens/app/profile-stack-screens/outline-btn-menu/settings-screen/Verify';
 import SupportTicket from '../screens/app/profile-stack-screens/outline-btn-menu/settings-screen/SupportTicket';
 import Promotion from '../screens/app/profile-stack-screens/outline-btn-menu/settings-screen/Promotion';
+import AddSupportTicketScreen from '../screens/app/profile-stack-screens/outline-btn-menu/settings-screen/AddSupportTicketScreen';
 const SettingsStack = () => {
     const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ const SettingsStack = () => {
             <Stack.Screen name={NavigationStrings.SETTINGS_VERIFY_ID_SCREEN} component={Verify} />
             <Stack.Screen name={NavigationStrings.SETTINGS_SUPPORT_TICKET_SCREEN} component={SupportTicket} />
             <Stack.Screen name={NavigationStrings.SETTINGS_PROMOTION_SCREEN} component={Promotion} />
+            <Stack.Screen name={NavigationStrings.SETTINGS_ADD_SUPPORT_TICKET_SCREEN} component={AddSupportTicketScreen} />
         </Stack.Navigator>
     );
 }

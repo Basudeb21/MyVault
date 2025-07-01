@@ -30,7 +30,7 @@ const ViewListContent = ({ route }) => {
     ];
 
     return (
-        <View>
+        <View style={{ flex: 1, backgroundColor: Colors.WHITE }}>
             <BackpressTopBar title={type + " lists"} />
             <FlatList
                 data={user}

@@ -1,9 +1,9 @@
-import { View, Text, TouchableOpacity, StyleSheet, Platform, StatusBar } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Platform, StatusBar, ImageBackground } from 'react-native';
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import { useNavigation } from '@react-navigation/native';
-import { Colors } from '../../../constants';
+import { Colors, Images } from '../../../constants';
 
 const BackpressProfileTopBar = ({ title }) => {
     const navigation = useNavigation();
@@ -12,7 +12,7 @@ const BackpressProfileTopBar = ({ title }) => {
     };
 
     return (
-        <View style={styles.container}>
+        <ImageBackground style={styles.container} source={{ uri: Images.POST_FIVE }}>
             <View style={styles.row}>
                 <TouchableOpacity onPress={handleBackPress} style={styles.icon}>
                     <Ionicons
@@ -23,7 +23,7 @@ const BackpressProfileTopBar = ({ title }) => {
                 </TouchableOpacity>
                 <Text style={styles.title}>{title}</Text>
             </View>
-        </View>
+        </ImageBackground>
     );
 };
 

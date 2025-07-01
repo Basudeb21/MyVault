@@ -22,11 +22,16 @@ const Referals = () => {
 
     return (
         <SafeAreaView style={{ backgroundColor: Colors.WHITE, flex: 1 }}>
-            <BackpressTopBar title={"Referals"} />
+            <BackpressTopBar title={"Referals"} bgColor={Colors.THEME} color={Colors.WHITE} />
 
             <FlatList
                 ListHeaderComponent={
-                    <Text style={styles.referal}>Your Referal List</Text>
+                    <View>
+                        <InviteLinkCard />
+                        <Spacer height={25} />
+                        <Text style={styles.referal}>Your Referal List</Text>
+
+                    </View>
                 }
                 data={referalUser}
                 keyExtractor={(item) => item.id.toString()}
@@ -39,13 +44,9 @@ const Referals = () => {
                     />
 
                 )}
-                ListFooterComponent={
-                    <View>
-                        <Spacer height={5} />
-                        <InviteLinkCard />
-                        <Spacer height={25} />
-                    </View>
-                }
+                // ListFooterComponent={
+
+                // }
                 contentContainerStyle={styles.scrollContent}
             />
 

@@ -21,7 +21,7 @@ const HelpAndSettingsScreen = () => {
         { id: 6, Icon: Foundation, iconName: "page-multiple", label: "Pages", content: "Learn how to create, use, follow and manage a Page." }
     ]
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: Colors.WHITE }}>
             <BackpressTopBar title={"Help and Support"} />
             <Text style={styles.updateTxt}>Last updated: 2025-05-06</Text>
             <FlatList

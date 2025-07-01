@@ -15,7 +15,7 @@ const Privacy = () => {
     const toggle2FASwitch = () => setIs2FAEnabled(prev => !prev);
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1, backgroundColor: Colors.WHITE }}>
             <BackpressTopBar title={"Privacy"} />
             <View style={styles.box}>
                 <View style={styles.row}>

@@ -8,12 +8,13 @@ import { moderateScale, verticalScale } from 'react-native-size-matters'
 import DropdownBox from '../../../../../components/framework/navbar/DropdownBox'
 import { countries } from '../../../../../data/CountryArray'
 import GradientTextButton from '../../../../../components/framework/button/GradientTextButton'
+import { Colors } from '../../../../../constants'
 
 const EditAddress = () => {
 
     const [selectedCountry, setSelectedCountry] = useState('');
     return (
-        <View>
+        <View style={{ flex: 1, backgroundColor: Colors.WHITE }}>
             <BackpressTopBar title={"Edit Address"} />
             <KeyboardAvoidingView style={styles.body}>
                 <TextInputBox placeholder='Enter Address Title' />

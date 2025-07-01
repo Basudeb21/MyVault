@@ -51,8 +51,8 @@ const EditProfile = () => {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <BackpressTopBar title={"Edit Profile"} />
             <ScrollView contentContainerStyle={{ paddingBottom: 60 }}>
+                <BackpressTopBar title={"Edit Profile"} bgColor={Colors.THEME} color={Colors.WHITE} />
                 <View style={styles.header}>
                     <ImageBackground source={{ uri: Images.POST_ONE }} style={styles.cover} resizeMode="cover">
                         <TouchableOpacity onPress={onPressCoverModal}>
