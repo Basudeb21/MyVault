@@ -38,7 +38,7 @@ const SignupScreen = () => {
     }
 
     return (
-        <SafeAreaView>
+        <SafeAreaView style={{ flex: 1, backgroundColor: Colors.WHITE }}>
             <ScrollView >
                 <KeyboardAvoidingView>
                     <ImageBackground source={{ uri: Images.SIGNUP_IMG }} style={styles.image}>

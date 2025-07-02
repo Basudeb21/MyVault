@@ -4,11 +4,11 @@ import BackpressProfileTopBar from '../../components/framework/navbar/BackpressP
 import ProfileCard from '../../components/framework/card/ProfileCard'
 import ProfileSingleMenuCard from '../../components/framework/card/ProfileSingleMenuCard'
 import { moderateScale, verticalScale } from 'react-native-size-matters'
-import FontAwesome5 from 'react-native-vector-icons/dist/FontAwesome5'
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome'
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons'
 import Entypo from 'react-native-vector-icons/dist/Entypo'
 import Ionicons from 'react-native-vector-icons/dist/Ionicons'
+import FontAwesome5 from 'react-native-vector-icons/dist/FontAwesome5'
 
 import Octicons from 'react-native-vector-icons/dist/Octicons'
 import FontAwesome6 from 'react-native-vector-icons/dist/FontAwesome6'
@@ -22,9 +22,9 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 const ProfilePage = () => {
 
     const navigation = useNavigation();
-    const onPressEditProfile = () => {
+    const onPressCreatorRequest = () => {
         navigation.navigate(NavigationStrings.PROFILE_STACK, {
-            screen: NavigationStrings.PROFILE_EDIT_SCREEN
+            screen: NavigationStrings.PROFILE_BECOME_A_CREATOR
         })
     }
 
@@ -98,7 +98,7 @@ const ProfilePage = () => {
 
 
     const cardData = [
-        { id: 1, icon: FontAwesome5, iconName: "user-edit", text: "Edit Profile", onPress: onPressEditProfile },
+        { id: 1, icon: Ionicons, iconName: "diamond-outline", text: "Become a creator", onPress: onPressCreatorRequest },
         { id: 2, icon: MaterialIcons, iconName: "live-tv", text: "Streams", onPress: onPressStreams },
         { id: 3, icon: Entypo, iconName: "shopping-basket", text: "Orders", onPress: onPressOrders },
         { id: 4, icon: FontAwesome, iconName: "list-ul", text: "Lists", onPress: onPressLists },
@@ -106,12 +106,16 @@ const ProfilePage = () => {
         { id: 6, icon: Entypo, iconName: "wallet", text: "Wallet", onPress: onPressWallet },
         { id: 7, icon: Octicons, iconName: "video", text: "Subscriptions", onPress: onPressSubscription },
         { id: 8, icon: FontAwesome6, iconName: "users-line", text: "Referrals", onPress: onPressReferal },
+        { id: 9, icon: Entypo, iconName: "shop", text: "Shop", onPress: onPressShop },
+        { id: 10, icon: MaterialIcons, iconName: "event", text: "Events", onPress: onPressEvents },
+        { id: 11, icon: Ionicons, iconName: "gift", text: "Rewards", onPress: onPressShop },
+        { id: 12, icon: FontAwesome5, iconName: "hammer", text: "Auction", onPress: onPressEvents },
     ]
 
     const buttonData = [
-        { id: 1, icon: Entypo, iconName: "shop", label: "Shop", onPress: onPressShop },
-        { id: 2, icon: MaterialIcons, iconName: "event", label: "Events", onPress: onPressEvents },
-        { id: 3, icon: MaterialIcons, iconName: "support-agent", label: "Help and Support", onPress: onPressHelpAndSupport },
+        { id: 1, icon: FontAwesome, iconName: "legal", label: "Legal", onPress: onPressShop },
+        // { id: 2, icon: MaterialIcons, iconName: "event", label: "Events", onPress: onPressEvents },
+        { id: 3, icon: MaterialIcons, iconName: "support-agent", label: "Help & Support", onPress: onPressHelpAndSupport },
         { id: 4, icon: Ionicons, iconName: "settings-sharp", label: "Settings", onPress: onPressSettings },
     ]
 
@@ -123,7 +127,7 @@ const ProfilePage = () => {
                     <View>
                         <BackpressProfileTopBar title={"Myprofile_4321"} />
                         <ProfileCard />
-                        <Spacer height={75} />
+                        <Spacer height={90} />
 
                     </View>
                 }
@@ -154,11 +158,11 @@ const ProfilePage = () => {
                                 />
                             ))}
                         </View>
-                        <Spacer height={20} />
+                        <Spacer height={5} />
                         <View style={{ justifyContent: "center", alignItems: "center" }}>
                             <OutLineButton label_two={"Logout"} width={"90%"} />
                         </View>
-                        <Spacer height={20} />
+                        <Spacer height={10} />
 
                     </>
                 }
@@ -176,7 +180,6 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.WHITE
     },
     contentContainer: {
-        // paddingHorizontal: moderateScale(16),
         paddingBottom: verticalScale(20),
     },
     row: {
@@ -188,6 +191,6 @@ const styles = StyleSheet.create({
     btnContainer: {
         marginTop: verticalScale(20),
         paddingHorizontal: moderateScale(16),
-        gap: moderateScale(15)
+        gap: moderateScale(5)
     }
 })

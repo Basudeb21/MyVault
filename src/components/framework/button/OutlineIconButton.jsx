@@ -2,27 +2,30 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Colors } from '../../../constants'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
-import Entypo from 'react-native-vector-icons/dist/Entypo'
+import Feather from 'react-native-vector-icons/dist/Feather'
+import GradientIcon from '../icon/GradientIcon'
 
 const OutlineIconButton = ({ Icon, iconName, label, onPress }) => {
     return (
-        <View style={styles.btn} onPress={onPress}>
-            <Icon
-                name={iconName}
-                size={20}
-                color={Colors.WHITE}
-                style={styles.icon}
-            />
-            <Text style={styles.btnTxt}>{label}</Text>
-            <TouchableOpacity onPress={onPress}>
-                <Entypo
-                    name="chevron-thin-down"
+        <TouchableOpacity style={styles.btn} onPress={onPress}>
+
+            <View style={styles.icon}>
+                <GradientIcon
+                    name={iconName}
                     size={20}
-                    color={Colors.THEME}
-                    style={styles.iconDown}
+                    IconPack={Icon}
+                    colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                 />
-            </TouchableOpacity>
-        </View>
+            </View>
+            <Text style={styles.btnTxt}>{label}</Text>
+
+            <Feather
+                name="arrow-right"
+                size={28}
+                color={Colors.THEME}
+                style={styles.iconDown}
+            />
+        </TouchableOpacity>
     )
 }
 
@@ -40,7 +43,7 @@ const styles = StyleSheet.create({
         paddingRight: moderateScale(10),
     },
     icon: {
-        backgroundColor: Colors.THEME,
+        backgroundColor: Colors.WHITE,
         padding: scale(7),
         borderRadius: scale(100),
         marginStart: moderateScale(10)

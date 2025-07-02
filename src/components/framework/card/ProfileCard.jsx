@@ -15,19 +15,20 @@ const ProfileCard = () => {
                         <TouchableOpacity style={styles.storyAddBtn}>
                             <Ionicons
                                 name={'add-circle'}
-                                size={25}
+                                size={20}
                                 color={Colors.THEME}
                             />
                         </TouchableOpacity>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.userNameContainer}>
-                    <Text style={styles.userName}>Fans_Test</Text>
-                    <Text style={styles.userID}>@u987654321</Text>
+                <View style={styles.topRow}>
+                    <View style={styles.userNameContainer}>
+                        <Text style={styles.userName}>Fans_Test</Text>
+                        <Text style={styles.userID}>@u987654321</Text>
 
-                </View>
-                <View style={styles.btnContainer}>
-                    <GradientTextButton label='View Profile' fontSize={10} width='150%' height={20} />
+                    </View>
+                    <GradientTextButton label='View Profile' fontSize={10} width='40%' height={20} />
+
                 </View>
             </View>
             <View style={styles.rowTwo}>
@@ -59,7 +60,12 @@ const styles = StyleSheet.create({
         borderRadius: scale(15),
         elevation: scale(5),
         position: "absolute",
-        top: 60
+        top: 100
+    },
+    topRow: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center"
     },
     rowOne: {
         flexDirection: "row"
@@ -68,8 +74,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-evenly",
         alignItems: 'center',
-        marginTop: verticalScale(15),
-        marginBottom: verticalScale(20)
+        marginBottom: verticalScale(12)
 
     },
     userImgContainer: {
@@ -82,14 +87,10 @@ const styles = StyleSheet.create({
         alignItems: "center",
         marginStart: moderateScale(30)
     },
-    btnContainer: {
-        alignSelf: "center",
-        marginStart: moderateScale(30)
-    },
 
     userImg: {
-        height: verticalScale(50),
-        width: moderateScale(50),
+        height: verticalScale(40),
+        width: moderateScale(40),
         borderRadius: scale(100),
 
     },
@@ -105,7 +106,7 @@ const styles = StyleSheet.create({
         alignSelf: "center"
     },
     userName: {
-        fontSize: scale(20),
+        fontSize: scale(16),
         fontWeight: "400",
     },
     userID: {
@@ -117,7 +118,7 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     counter: {
-        fontSize: scale(16),
+        fontSize: scale(13),
         fontWeight: "500",
         alignSelf: "center"
     },

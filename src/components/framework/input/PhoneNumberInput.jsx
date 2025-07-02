@@ -25,7 +25,6 @@ const PhoneNumberInput = (
     };
     return (
         <View>
-
             <View style={[styles.inputContainer, styles.loginCredStyle, isFocused ? styles.active : styles.deactive]}>
                 <View style={styles.codeContainer}>
                     <CountryPicker
@@ -58,7 +57,7 @@ const styles = StyleSheet.create({
     loginCredStyle: {
         borderWidth: 1,
         borderRadius: 5,
-        backgroundColor: Colors.FADE,
+        backgroundColor: Colors.WHITE,
         borderColor: Colors.THEME,
     },
     inputContainer: {
@@ -67,7 +66,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 8,
         borderColor: '#ccc',
-        backgroundColor: Colors.FADE,
+        backgroundColor: Colors.WHITE,
         paddingHorizontal: 10,
     },
 

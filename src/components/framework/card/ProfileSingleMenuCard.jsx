@@ -30,12 +30,12 @@ const styles = StyleSheet.create({
         paddingVertical: verticalScale(10),
         elevation: scale(10),
         borderRadius: scale(8),
-        paddingStart: moderateScale(20)
+        paddingStart: moderateScale(10),
+        gap: scale(10)
 
     },
     text: {
-        marginStart: moderateScale(10),
         fontWeight: "600",
-        fontSize: scale(14)
+        fontSize: scale(13)
     }
 })

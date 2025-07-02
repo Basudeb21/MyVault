@@ -21,9 +21,7 @@ const SharedPost = ({ userName, userAvatar, postImage }) => {
 export default SharedPost
 
 const styles = StyleSheet.create({
-    container: {
-        marginTop: verticalScale(20)
-    },
+
     postImage: {
         marginTop: verticalScale(10),
         width: "100%",

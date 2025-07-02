@@ -1,12 +1,18 @@
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
 import { Colors, Images } from '../../../constants'
 import SuggestionUserCard from '../../../components/framework/card/SuggestionUserCard'
-import Spacer from '../../../components/framework/boots/Spacer'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 const SuggestionArea = () => {
+    const suggestionUsers = [
+        { id: '1', image: Images.CELEBRITY_AVATAR_ONE },
+        { id: '2', image: Images.CELEBRITY_AVATAR_TWO },
+        { id: '3', image: Images.CELEBRITY_AVATAR_THREE },
+        { id: '4', image: Images.CELEBRITY_AVATAR_FOUR },
+        { id: '5', image: Images.CELEBRITY_AVATAR_FIVE },
+    ];
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.textContainer}>
@@ -15,14 +21,17 @@ const SuggestionArea = () => {
                     <Text style={styles.seeAllTxt}>See all</Text>
                 </TouchableOpacity>
             </View>
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                <SuggestionUserCard userImage={Images.CELEBRITY_AVATAR_ONE} />
-                <SuggestionUserCard userImage={Images.CELEBRITY_AVATAR_TWO} />
-                <SuggestionUserCard userImage={Images.CELEBRITY_AVATAR_THREE} />
-                <SuggestionUserCard userImage={Images.CELEBRITY_AVATAR_FOUR} />
-                <SuggestionUserCard userImage={Images.CELEBRITY_AVATAR_FIVE} />
-                <Spacer width={10} />
-            </ScrollView>
+            <FlatList
+                data={suggestionUsers}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                    <SuggestionUserCard userImage={item.image} />
+                )}
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                ItemSeparatorComponent={() => <View style={{ width: 5 }} />}
+                contentContainerStyle={{ paddingHorizontal: 5 }}
+            />
         </SafeAreaView>
     )
 }
@@ -30,15 +39,12 @@ const SuggestionArea = () => {
 export default SuggestionArea
 
 const styles = StyleSheet.create({
-    container: {
-        marginTop: verticalScale(40),
-    },
-
     textContainer: {
+        marginStart: moderateScale(10),
         flexDirection: "row",
         justifyContent: "space-between",
-        marginHorizontal: moderateScale(20),
-        marginBottom: verticalScale(10)
+        marginBottom: verticalScale(10),
+        marginEnd: moderateScale(10)
     },
     suggestionTxt: {
         fontSize: scale(14),
@@ -47,6 +53,11 @@ const styles = StyleSheet.create({
     seeAllTxt: {
         fontSize: scale(12),
         fontWeight: "500",
-        color: Colors.THEME
+        color: Colors.THEME,
+        borderWidth: scale(1),
+        paddingHorizontal: moderateScale(5),
+        paddingVertical: verticalScale(2),
+        borderRadius: scale(6),
+        borderColor: Colors.THEME
     }
 })

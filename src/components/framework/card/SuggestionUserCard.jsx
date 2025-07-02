@@ -6,6 +6,7 @@ import Spacer from '../boots/Spacer';
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
 import GradientIconButtonNoText from '../button/GradientIconButtonNoText';
+import GradientOutlineIconButton from '../button/GradientOutlineIconButton';
 
 
 const SuggestionUserCard = ({ userImage }) => {
@@ -14,23 +15,24 @@ const SuggestionUserCard = ({ userImage }) => {
             <Image source={{ uri: userImage }} style={styles.userImage} />
             <Text style={styles.userName}>NorwegianNerd</Text>
             <Text style={styles.userID}>@u987654321</Text>
-            <Spacer height={20} />
-            <GradientIconButtonNoText
-                Icon={MaterialIcons}
-                iconName={"subscriptions"}
-                iconSize={14}
-                width='90%'
-                height={27}
+            <Spacer height={8} />
+            <View style={styles.row}>
+                <GradientOutlineIconButton
+                    Icon={MaterialIcons}
+                    iconName={"subscriptions"}
+                    iconSize={14}
+                    width={"45%"}
+                    height={20}
+                />
+                <GradientOutlineIconButton
+                    Icon={Ionicons}
+                    iconName={"person-add"}
+                    iconSize={14}
+                    width={"45%"}
+                    height={20}
+                />
+            </View>
 
-            />
-            <Spacer height={5} />
-            <GradientIconButtonNoText
-                Icon={Ionicons}
-                iconName={"person-add"}
-                iconSize={14}
-                width='90%'
-                height={27}
-            />
         </View>
     )
 }
@@ -39,30 +41,34 @@ export default SuggestionUserCard
 
 const styles = StyleSheet.create({
     container: {
-        width: moderateScale(150),
-        height: verticalScale(240),
+        width: moderateScale(110),
+        height: verticalScale(130),
         borderColor: Colors.PLACEHOLDER,
         borderWidth: scale(1),
-        borderRadius: scale(8),
+        borderRadius: scale(7),
         justifyContent: "center",
         alignItems: "center",
-        marginStart: moderateScale(20)
 
     },
+    row: {
+        minWidth: "100%",
+        maxWidth: "100%",
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+    },
     userImage: {
-        width: moderateScale(110),
-        height: verticalScale(110),
+        width: moderateScale(58),
+        height: verticalScale(58),
         borderRadius: scale(100)
     },
     userName: {
-        fontSize: scale(14),
+        fontSize: scale(12),
         fontWeight: "500",
-        marginTop: verticalScale(10)
+        marginTop: verticalScale(3)
     },
     userID: {
-        fontSize: scale(10),
+        fontSize: scale(9),
         fontWeight: "500",
-        marginTop: verticalScale(5),
         color: Colors.USER_ID_NAME
     },
 

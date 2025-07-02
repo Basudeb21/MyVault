@@ -3,6 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { moderateScale, verticalScale } from 'react-native-size-matters';
 import { Colors, NavigationStrings } from '../../../../constants';
 import { useNavigation } from '@react-navigation/native';
@@ -51,25 +52,27 @@ const BottomBar = ({ focused = true }) => {
                         name={favoriteFocused ? 'favorite' : 'favorite-border'}
                         size={24}
                         IconPack={MaterialIcons}
-                        colors={
-                            favoriteFocused
-                                ? [Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]
-                                : [Colors.BLACK, Colors.BLACK]
-                        }
+                        colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                     />
                     <Text style={styles.counter}>50K</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.iconContainer} onPress={handleSetComment}>
-                    <Ionicons name="chatbox-ellipses-outline" size={24} color={Colors.BLACK} />
+                    <GradientIcon
+                        name={'chatbox-ellipses-outline'}
+                        size={24}
+                        IconPack={Ionicons}
+                        colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
+                    />
                     <Text style={styles.counter}>1.2K</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.iconContainer} onPress={handleSetGift}>
-                    <Ionicons
-                        name={giftFocused ? 'gift' : 'gift-outline'}
-                        size={24}
-                        color={giftFocused ? Colors.YELLOW : Colors.BLACK}
+                    <GradientIcon
+                        name={'dollar'}
+                        size={16}
+                        IconPack={FontAwesome}
+                        colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                     />
                     <TouchableOpacity onPress={openTips}>
                         <Text style={styles.counter}>32</Text>

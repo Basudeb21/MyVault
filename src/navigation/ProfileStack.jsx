@@ -17,6 +17,7 @@ import SettingsScreen from '../screens/app/profile-stack-screens/outline-btn-men
 import EventsScreen from '../screens/app/profile-stack-screens/outline-btn-menu/EventsScreen';
 import EventDetailsScreen from '../screens/app/profile-stack-screens/outline-btn-menu/sub-screen/EventDetailsScreen';
 import SettingsStack from './SettingsStack';
+import BecomeACreator from '../screens/app/profile-stack-screens/BecomeACreator';
 const ProfileStack = () => {
     const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,7 @@ const ProfileStack = () => {
             <Stack.Screen name={NavigationStrings.PROFILE_HELP_AND_SUPPORT_SCREEN} component={HelpAndSettingsScreen} />
             <Stack.Screen name={NavigationStrings.PROFILE_SETTINGS_SCREEN} component={SettingsScreen} />
             <Stack.Screen name={NavigationStrings.SETTINGS_STACK} component={SettingsStack} />
+            <Stack.Screen name={NavigationStrings.PROFILE_BECOME_A_CREATOR} component={BecomeACreator} />
         </Stack.Navigator>
     );
 }

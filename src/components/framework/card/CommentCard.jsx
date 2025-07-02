@@ -1,29 +1,43 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import { Colors, Images } from '../../../constants'
-import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
+import { Image, Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import { Colors } from '../../../constants';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
+import CommentPressModal from '../modal/CommentPressModal'; // Adjust the path if needed
 
 const CommentCard = ({ image, userName, comment, time }) => {
-    return (
-        <View style={styles.container}>
-            <Image source={{ uri: image }} style={styles.image} />
-            <View style={styles.rightContent}>
-                <View style={styles.commentContainer}>
-                    <Text style={styles.userName}>{userName}</Text>
-                    <Text style={styles.comment}>{comment}</Text>
-                </View>
-                <View style={styles.lowerContainer}>
-                    <Text style={styles.time}>{time}</Text>
-                    <TouchableOpacity>
-                        <Text style={styles.replyTxt}>Reply</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-        </View>
-    )
-}
+    const [showModal, setShowModal] = useState(false);
 
-export default CommentCard
+    return (
+        <>
+            <Pressable
+                style={styles.container}
+                onLongPress={() => setShowModal(true)}
+            >
+                <Image source={{ uri: image }} style={styles.image} />
+                <View style={styles.rightContent}>
+                    <View style={styles.commentContainer}>
+                        <Text style={styles.userName}>{userName}</Text>
+                        <Text style={styles.comment}>{comment}</Text>
+                    </View>
+                    <View style={styles.lowerContainer}>
+                        <Text style={styles.time}>{time}</Text>
+                        <TouchableOpacity>
+                            <Text style={styles.replyTxt}>Reply</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+            </Pressable>
+
+            <CommentPressModal
+                visible={showModal}
+                onClose={() => setShowModal(false)}
+            />
+        </>
+    );
+};
+
+export default CommentCard;
+
 
 const styles = StyleSheet.create({
     container: {

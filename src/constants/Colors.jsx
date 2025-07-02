@@ -13,9 +13,13 @@ export default {
     BILLING_HEADER: "#E9E9E9",
     PURPLE: "#93229f",
 
+    INCOME: "#28A745",
+
     TRANSPARENT_WHITE: "rgba(255, 255, 255, 0.3)",
     TRANSPARENT_WHITE_LIGHT: "rgba(255, 255, 255, 0.2)",
     TRANSPARENT_BLACK: "rgba(0, 0, 0, 0.3)",
+    TRANSPARENT_BLACK_DARK: "rgba(0, 0, 0, 0.5)",
+
 
 
     PLACEHOLDER: "#6D6D6D",

@@ -34,7 +34,7 @@ const PasswordInputBox = ({ value, setValue, placeholder }) => {
                 >
                     <Icon
                         name={secure ? 'eye-off' : 'eye'}
-                        size={scale(20)}
+                        size={scale(16)}
                         color={Colors.WHITE}
                     />
                 </LinearGradient>

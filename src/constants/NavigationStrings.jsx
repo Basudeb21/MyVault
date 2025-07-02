@@ -75,6 +75,7 @@ export default {
     PROFILE_WALLET_SCREEN: "ProfileWallet",
     PROFILE_SUBSCRIPTIONS_SCREEN: "ProfileSubscription",
     PROFILE_REFERALS_SCREEN: "ProfileReferal",
+    PROFILE_BECOME_A_CREATOR: "BecomeACreator",
 
 
     // Settings Stack Screens

@@ -12,6 +12,7 @@ import GradientIcon from '../icon/GradientIcon';
 
 const BottomNavbar = () => {
     const Tab = createBottomTabNavigator();
+    const iconSize = 24;
 
     return (
         <Tab.Navigator
@@ -30,7 +31,7 @@ const BottomNavbar = () => {
                     tabBarIcon: ({ focused }) => (
                         <GradientIcon
                             name={focused ? "home" : "home-outline"}
-                            size={24}
+                            size={iconSize}
                             IconPack={Ionicons}
                             colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                         />
@@ -45,7 +46,7 @@ const BottomNavbar = () => {
                     tabBarIcon: ({ focused }) => (
                         <GradientIcon
                             name={focused ? "chatbubble-ellipses-sharp" : "chatbubble-ellipses-outline"}
-                            size={24}
+                            size={iconSize}
                             IconPack={Ionicons}
                             colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                         />
@@ -61,8 +62,8 @@ const BottomNavbar = () => {
                     tabBarIcon: ({ focused }) => (
                         <View style={styles.addIconContainer}>
                             <GradientIcon
-                                name={focused ? 'add-circle' : 'add-circle-outline'}
-                                size={50}
+                                name={focused ? 'add-circle-sharp' : 'add-circle-outline'}
+                                size={60}
                                 IconPack={Ionicons}
                                 colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                             />
@@ -80,7 +81,7 @@ const BottomNavbar = () => {
                     tabBarIcon: ({ focused }) => (
                         <GradientIcon
                             name={"live-tv"}
-                            size={24}
+                            size={iconSize}
                             IconPack={MaterialIcons}
                             colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                         />
@@ -109,13 +110,13 @@ export default BottomNavbar
 const styles = StyleSheet.create({
 
     addIconContainer: {
-        width: moderateScale(56),
-        height: verticalScale(50),
-        borderRadius: scale(35),
+        width: moderateScale(40),
+        height: verticalScale(40),
+        borderRadius: scale(100),
         backgroundColor: Colors.WHITE,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: moderateScale(-30),
+        marginTop: moderateScale(-20),
         shadowColor: Colors.BLACK,
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.25,
@@ -123,14 +124,20 @@ const styles = StyleSheet.create({
         elevation: 5,
         alignSelf: 'center',
     },
+    navBar: {
+        height: 40,
+        // borderTopLeftRadius: 20,
+        // borderTopRightRadius: 20,
+        backgroundColor: Colors.WHITE,
+    },
     img: {
         width: moderateScale(27),
         height: verticalScale(27),
         borderRadius: scale(100),
     },
     active: {
-        width: moderateScale(27),
-        height: verticalScale(27),
+        width: moderateScale(26),
+        height: verticalScale(26),
         borderRadius: scale(100),
         borderWidth: scale(2),
         borderColor: Colors.THEME

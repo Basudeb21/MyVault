@@ -1,6 +1,6 @@
-import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, KeyboardAvoidingView, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
-import { Images, NavigationStrings } from '../../constants'
+import { Colors, Images, NavigationStrings } from '../../constants'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
 import FastImage from 'react-native-fast-image';
 import { useNavigation } from '@react-navigation/native';
@@ -24,30 +24,33 @@ const LoginScreen = () => {
     }
 
     return (
-        <SafeAreaView>
-            <ImageBackground source={{ uri: Images.LOGIN_IMG }} style={styles.image}>
-                <FastImage
-                    source={Images.WHITE_LOGO}
-                    style={styles.logo}
-                    resizeMode={FastImage.resizeMode.contain}
-                />
-            </ImageBackground>
-            <Text style={styles.loginTxt}>Login</Text>
-            <Spacer height={30} />
-            <View style={styles.inputContainer}>
-                <TextInputBox value={userName} setValue={setUserName} placeholder='Email / Username*' />
-                <Spacer height={20} />
-                <PasswordInputBox value={password} setValue={setPassword} placeholder='Password' />
-            </View>
-            <View style={styles.btnContainer}>
-                <GradientTextButton label='Login' width='100%' />
-                <Spacer height={10} />
-                <Link label={"Forgot Password?"} />
-                <Spacer height={40} />
-                <OutLineButton label_one={"Don’t have an account?"} label_two={"Sign Up"} onPress={handleLoginPress} />
+        <SafeAreaView style={{ flex: 1, backgroundColor: Colors.WHITE }}>
+            <KeyboardAvoidingView>
+                <ScrollView>
+                    <ImageBackground source={{ uri: Images.LOGIN_IMG }} style={styles.image}>
+                        <FastImage
+                            source={Images.WHITE_LOGO}
+                            style={styles.logo}
+                            resizeMode={FastImage.resizeMode.contain}
+                        />
+                    </ImageBackground>
+                    <Text style={styles.loginTxt}>Login</Text>
+                    <Spacer height={30} />
+                    <View style={styles.inputContainer}>
+                        <TextInputBox value={userName} setValue={setUserName} placeholder='Email / Username*' />
+                        <Spacer height={20} />
+                        <PasswordInputBox value={password} setValue={setPassword} placeholder='Password' />
+                    </View>
+                    <View style={styles.btnContainer}>
+                        <Link label={"Forgot Password?"} />
+                        <Spacer height={10} />
+                        <GradientTextButton label='Login' width='100%' />
+                        <Spacer height={15} />
+                        <OutLineButton label_one={"Don’t have an account?"} label_two={"Sign Up"} onPress={handleLoginPress} />
 
-            </View>
-
+                    </View>
+                </ScrollView>
+            </KeyboardAvoidingView>
         </SafeAreaView>
     )
 }
