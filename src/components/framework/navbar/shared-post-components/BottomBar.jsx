@@ -4,6 +4,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { moderateScale, verticalScale } from 'react-native-size-matters';
 import { Colors, NavigationStrings } from '../../../../constants';
 import { useNavigation } from '@react-navigation/native';
@@ -77,6 +78,14 @@ const BottomBar = ({ focused = true }) => {
                     <TouchableOpacity onPress={openTips}>
                         <Text style={styles.counter}>32</Text>
                     </TouchableOpacity>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.iconContainer} onPress={handleSetGift}>
+                    <GradientIcon
+                        name={'share-alt'}
+                        size={16}
+                        IconPack={FontAwesome5}
+                        colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
+                    />
                 </TouchableOpacity>
             </View>
 

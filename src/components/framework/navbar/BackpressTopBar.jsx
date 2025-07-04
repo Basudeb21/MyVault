@@ -6,7 +6,7 @@ import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import { useNavigation } from '@react-navigation/native';
 import { Colors } from '../../../constants';
 
-const BackpressTopBar = ({ title, color = Colors.BLACK, bgColor = Colors.WHITE }) => {
+const BackpressTopBar = ({ title, color = Colors.WHITE, bgColor = Colors.THEME }) => {
 
     const navigation = useNavigation();
     const handleBackPress = () => {
@@ -20,13 +20,13 @@ const BackpressTopBar = ({ title, color = Colors.BLACK, bgColor = Colors.WHITE }
                     <Ionicons
                         name="arrow-back-outline"
                         size={24}
-                        color={color || Colors.BLACK}
+                        color={color || Colors.WHITE}
                     />
                 </TouchableOpacity>
             </View>
 
             <View style={styles.centerContainer}>
-                <Text style={[styles.title, { color: color || Colors.BLACK }]}>{title}</Text>
+                <Text style={[styles.title, { color: color || Colors.WHITE }]}>{title}</Text>
             </View>
 
             <View style={styles.sideContainer} />
@@ -38,7 +38,7 @@ export default BackpressTopBar;
 
 const styles = StyleSheet.create({
     container: {
-        height: verticalScale(60),
+        height: verticalScale(45),
         flexDirection: "row",
         alignItems: "center",
         paddingHorizontal: moderateScale(16),

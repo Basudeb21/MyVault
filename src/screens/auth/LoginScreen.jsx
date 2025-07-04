@@ -46,7 +46,7 @@ const LoginScreen = () => {
                         <Spacer height={10} />
                         <GradientTextButton label='Login' width='100%' />
                         <Spacer height={15} />
-                        <OutLineButton label_one={"Don’t have an account?"} label_two={"Sign Up"} onPress={handleLoginPress} />
+                        <OutLineButton label_one={"Don’t have an account? "} label_two={"Sign Up"} onPress={handleLoginPress} />
 
                     </View>
                 </ScrollView>

@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     btnTxt: {
         fontWeight: "500",
         fontSize: scale(18),
-        color: Colors.THEME,
+        color: Colors.BLACK,
         marginStart: moderateScale(10),
         flex: 1
     },

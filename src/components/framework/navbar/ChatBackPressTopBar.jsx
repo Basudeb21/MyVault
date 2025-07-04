@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         flexDirection: "row",
         alignItems: "center",
-        right: 20
+        right: scale(50)
     },
     title: {
         color: Colors.BLACK,

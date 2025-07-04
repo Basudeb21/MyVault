@@ -11,6 +11,8 @@ import { Colors, Images } from '../../../constants'
 import BookmarkTabDetails from './sub-screen/BookmarkTabDetails'
 import NoContantPage from './sub-screen/NoContantPage'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { verticalScale } from 'react-native-size-matters'
+import GradientIcon from '../../../components/framework/icon/GradientIcon'
 
 const Tab = createMaterialTopTabNavigator()
 
@@ -47,15 +49,15 @@ const BookmarksTabs = () => {
                 tabBarIcon: () => {
                     switch (route.name) {
                         case 'All':
-                            return <Ionicons name="apps-sharp" size={iconSize} color={Colors.THEME} />
+                            return <GradientIcon name={"apps-sharp"} size={24} IconPack={Ionicons} colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]} />
                         case 'Images':
-                            return <Fontisto name="photograph" size={iconSize} color={Colors.THEME} />
+                            return <GradientIcon name={"photograph"} size={24} IconPack={Fontisto} colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]} />
                         case 'Videos':
-                            return <MaterialIcons name="video-collection" size={iconSize} color={Colors.THEME} />
+                            return <GradientIcon name={"video-collection"} size={24} IconPack={MaterialIcons} colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]} />
                         case 'Audios':
-                            return <Octicons name="unmute" size={iconSize} color={Colors.THEME} />
+                            return <GradientIcon name={"unmute"} size={24} IconPack={Octicons} colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]} />
                         default:
-                            return null
+                            return null;
                     }
                 },
             })}
@@ -72,8 +74,8 @@ const Bookmarks = () => {
     return (
         <SafeAreaView style={styles.container}>
             <BackpressTopBar title="Bookmarks" />
-            <SearchBar placeholder="Search" />
             <View style={styles.tabContainer}>
+                <SearchBar placeholder="Search" />
                 <BookmarksTabs />
             </View>
         </SafeAreaView>
@@ -85,9 +87,10 @@ export default Bookmarks
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: Colors.WHITE
+        backgroundColor: Colors.WHITE,
     },
     tabContainer: {
         flex: 1,
+        marginTop: verticalScale(10)
     }
 })

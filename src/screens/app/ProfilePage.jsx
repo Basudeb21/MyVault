@@ -28,9 +28,9 @@ const ProfilePage = () => {
         })
     }
 
-    const onPressStreams = () => {
-        navigation.navigate(NavigationStrings.POST_STACK, {
-            screen: NavigationStrings.LIVE_SHOWS
+    const onPressNotification = () => {
+        navigation.navigate(NavigationStrings.HOME_STACK, {
+            screen: NavigationStrings.HOME_NOTIFICATION_SCREEN
         })
     }
 
@@ -99,7 +99,7 @@ const ProfilePage = () => {
 
     const cardData = [
         { id: 1, icon: Ionicons, iconName: "diamond-outline", text: "Become a creator", onPress: onPressCreatorRequest },
-        { id: 2, icon: MaterialIcons, iconName: "live-tv", text: "Streams", onPress: onPressStreams },
+        { id: 2, icon: Ionicons, iconName: "notifications", text: "Notification", onPress: onPressNotification },
         { id: 3, icon: Entypo, iconName: "shopping-basket", text: "Orders", onPress: onPressOrders },
         { id: 4, icon: FontAwesome, iconName: "list-ul", text: "Lists", onPress: onPressLists },
         { id: 5, icon: FontAwesome, iconName: "bookmark", text: "Bookmarks", onPress: onPressSBookmarks },

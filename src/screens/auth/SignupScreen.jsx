@@ -13,6 +13,13 @@ import OutLineButton from '../../components/framework/button/OutLineButton';
 import Link from '../../components/framework/boots/Link';
 import Spacer from '../../components/framework/boots/Spacer';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import SocialIconButton from '../../components/framework/button/SocialIconButton';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/Entypo';
+import HR from '../../components/framework/boots/HR';
+import PrivacyModal from '../../components/framework/modal/PrivacyModal';
+import { termsOfData } from '../../data/termsOfUseData';
+import { privacyAndPolicyData } from '../../data/privacyAndPolicyData';
 
 const SignupScreen = () => {
 
@@ -23,6 +30,9 @@ const SignupScreen = () => {
     const [phoneNumber, setphoneNumber] = useState('')
     const [countryCode, setCountryCode] = useState('IN');
     const [callingCode, setCallingCode] = useState('91');
+    const [privacyModal, setPrivacyModal] = useState(false);
+    const [termsModal, setTermsModal] = useState(false);
+
 
     const navigation = useNavigation();
 
@@ -36,6 +46,7 @@ const SignupScreen = () => {
         })
 
     }
+
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: Colors.WHITE }}>
@@ -76,19 +87,63 @@ const SignupScreen = () => {
                         <Spacer height={20} />
                     </View>
                     <View style={styles.checkBocContainer}>
-                        <Checkbox />
-                        <Text>I agree to the <Link label={"Terms of Use"} /> and <Link label={"Privacy Policy"} /></Text>
+                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                            <Checkbox />
+                            <Text>I agree to the </Text>
+                            <Link
+                                label={"Terms of Use"}
+                                onPress={() => setTermsModal(true)}
+                            />
+                            <Text> and </Text>
+                            <Link
+                                label={"Privacy Policy"}
+                                onPress={() => setPrivacyModal(true)}
+                            />
+                        </View>
                     </View>
-                    <Spacer height={40} />
+                    <Spacer height={10} />
                     <View style={styles.btnContainer}>
                         <GradientTextButton label='Signup' onPress={handlehomePress} />
                         <Spacer height={10} />
-                        <OutLineButton label_one={"Already have an account?"} label_two={"Login"} onPress={handleSignupPress} />
-
+                        <OutLineButton label_one={"Already have an account? "} label_two={"Login"} onPress={handleSignupPress} />
                     </View>
                     <Spacer height={20} />
                 </KeyboardAvoidingView>
+                <View style={styles.dividerContainer}>
+                    <HR height={1} width='45%' />
+                    <Text style={styles.orText}>OR</Text>
+                    <HR height={1} width='45%' />
+                </View>
+                <Spacer height={10} />
+                <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: moderateScale(10) }}>
+                    <SocialIconButton Icon={Ionicons} iconName={"logo-facebook"} size={26} color={Colors.FACEBOOK_LOGO} />
+                    <SocialIconButton Icon={Ionicons} iconName={"logo-google"} size={22} color={Colors.GOOGLE_LOGO} />
+                    <SocialIconButton Icon={Entypo} iconName={"twitter-with-circle"} size={26} color={Colors.TWITTER_LOGO} />
+                    <SocialIconButton Icon={Entypo} iconName={"instagram-with-circle"} size={26} color={Colors.INSTAGRAM_LOGO} />
+                </View>
+                <Spacer height={20} />
             </ScrollView>
+            {termsModal && (
+                <PrivacyModal
+                    visible={termsModal}
+                    onClose={() => setTermsModal(false)}
+                    head={"Terms and conditions"}
+                    contentType={"Terms and conditions"}
+                    updateDate={"Last updated: 2021-09-30"}
+                    data={termsOfData}
+                />
+            )}
+            {privacyModal && (
+                <PrivacyModal
+                    visible={privacyModal}
+                    onClose={() => setPrivacyModal(false)}
+                    head={"Privacy and Policy"}
+                    contentType={"Privacy and Policy"}
+                    updateDate={"Last updated: 2021-09-30"}
+                    data={privacyAndPolicyData}
+                />
+            )}
+
         </SafeAreaView>
     )
 }
@@ -104,6 +159,24 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center"
     },
+    dividerContainer: {
+        flexDirection: "row",
+        alignItems: "center",
+        marginHorizontal: moderateScale(20),
+    },
+    hr: {
+        flex: 1,
+        height: 1,
+        backgroundColor: Colors.GRAY,
+    },
+    orText: {
+        marginHorizontal: moderateScale(10),
+        fontSize: scale(14),
+        color: Colors.BLACK,
+        fontWeight: "500",
+        marginTop: verticalScale(-8)
+    },
+
     image: {
         width: "100%",
         height: verticalScale(180)

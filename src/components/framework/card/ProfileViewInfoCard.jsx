@@ -44,7 +44,6 @@ export default ProfileViewInfoCard
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: verticalScale(10),
         flexDirection: "row",
     },
     cover: {

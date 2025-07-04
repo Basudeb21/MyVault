@@ -33,6 +33,16 @@ export default {
 
     PRIORITY_LOW: "#4CAF50",
     PRIORITY_MIDIUM: "#FFC107",
-    PRIORITY_HIGH: "#FF4C4C"
+    PRIORITY_HIGH: "#FF4C4C",
+
+
+
+
+    FACEBOOK_LOGO: "#1877F2",
+    GOOGLE_LOGO: "#DB4437",
+    TWITTER_LOGO: "#1DA1F2",
+    INSTAGRAM_LOGO: "#405DE6"
+
+
 
 }

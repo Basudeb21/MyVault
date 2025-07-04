@@ -20,6 +20,8 @@ import FansPostHistoryOnProfile from './FansPostHistoryOnProfile';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import FollowedByImageAndName from '../../../components/framework/iamge/FollowedByImageAndName';
+import GradientIcon from '../../../components/framework/icon/GradientIcon';
+import BackpressTopBar from '../../../components/framework/navbar/BackpressTopBar';
 const Tab = createMaterialTopTabNavigator()
 
 const AllScreen = () => <FansPostHistoryOnProfile />
@@ -55,13 +57,13 @@ const BookmarksTabs = () => {
                 tabBarIcon: () => {
                     switch (route.name) {
                         case 'All':
-                            return <Ionicons name="apps-sharp" size={24} color={Colors.THEME} />
+                            return <GradientIcon name={"apps-sharp"} size={24} IconPack={Ionicons} colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]} />
                         case 'Images':
-                            return <Fontisto name="photograph" size={24} color={Colors.THEME} />
+                            return <GradientIcon name={"photograph"} size={24} IconPack={Fontisto} colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]} />
                         case 'Videos':
-                            return <MaterialIcons name="video-collection" size={24} color={Colors.THEME} />
+                            return <GradientIcon name={"video-collection"} size={24} IconPack={MaterialIcons} colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]} />
                         case 'Audios':
-                            return <Octicons name="unmute" size={24} color={Colors.THEME} />
+                            return <GradientIcon name={"unmute"} size={24} IconPack={Octicons} colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]} />
                         default:
                             return null;
                     }
@@ -108,7 +110,7 @@ const FansProfilePage = ({ route }) => {
                 contentContainerStyle={{ flexGrow: 1 }}
                 showsVerticalScrollIndicator={false}
             >
-                <BackpressTopBarWithNotificationAndThreeDots title={userName} />
+                <BackpressTopBar title={userName} color={Colors.WHITE} />
                 <ProfileViewInfoCard />
                 <Spacer height={25} />
                 <FollowedByImageAndName images={imgs} />
@@ -128,7 +130,7 @@ const FansProfilePage = ({ route }) => {
                 <ProfileHighlightPostArea />
                 <Spacer height={20} />
 
-                <View style={{ flex: 1, height: 500 }}>
+                <View style={{ flex: 1, height: 380 }}>
                     <BookmarksTabs />
                 </View>
             </ScrollView>

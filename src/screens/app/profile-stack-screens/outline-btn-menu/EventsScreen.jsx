@@ -91,9 +91,14 @@ const EventsScreen = () => {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: Colors.WHITE }}>
             <BackpressTopBar title={"Events"} />
-            <SearchBar placeholder={"Search"} />
             <View>
                 <FlatList
+                    ListHeaderComponent={
+                        <>
+                            <Spacer height={10} />
+                            <SearchBar placeholder={"Search"} />
+                        </>
+                    }
                     data={eventItems}
                     numColumns={2}
                     columnWrapperStyle={styles.row}

@@ -30,6 +30,7 @@ const WalletScreen = () => {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: Colors.WHITE }}>
             <BackpressTopBar title={"Wallet"} />
+            <Spacer height={15} />
             <View style={styles.topContainer}>
                 <Text>Your payments and Wallet</Text>
                 <Spacer height={10} />

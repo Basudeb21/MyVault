@@ -20,7 +20,6 @@ const FriendChatScreen = ({ route }) => {
             <ChatBackPressTopBar info={user} />
             <View style={styles.chatContainer}>
                 <ScrollView contentContainerStyle={styles.scrollContent}>
-                    <Spacer height={50} />
                     <ProfileTopCard info={user} />
                     <Spacer height={30} />
                     <ChatTime label={"31 May, 16:20"} />

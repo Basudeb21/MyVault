@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
 import { Colors } from '../../../../constants'
+import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons'
 
 const PressableViewProfilePostTopArea = ({ userAvatar, userName, userID, onPress }) => {
     return (
@@ -12,7 +13,11 @@ const PressableViewProfilePostTopArea = ({ userAvatar, userName, userID, onPress
             />
             <View style={styles.userNameContainer}>
                 <Text style={styles.userName}>{userName}</Text>
-                <Text style={styles.userID}>{userID}</Text>
+                <MaterialIcons
+                    name={"verified"}
+                    size={18}
+                    color={Colors.FACEBOOK_LOGO}
+                />
             </View>
         </TouchableOpacity>
     )
@@ -30,8 +35,10 @@ const styles = StyleSheet.create({
         borderRadius: scale(100),
     },
     userNameContainer: {
+        flexDirection: "row",
         marginStart: moderateScale(10),
-        justifyContent: "center"
+        justifyContent: "center",
+        gap: scale(10),
     },
     userName: {
         fontSize: scale(18),

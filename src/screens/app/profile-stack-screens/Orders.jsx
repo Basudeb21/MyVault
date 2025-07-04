@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     },
     headText: {
         marginStart: moderateScale(40),
+        marginTop: verticalScale(10),
         fontSize: scale(20),
         fontWeight: "400"
     },

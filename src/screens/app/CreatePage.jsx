@@ -58,7 +58,8 @@ export default CreatePage
 
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal: moderateScale(20)
+        marginHorizontal: moderateScale(20),
+        marginTop: verticalScale(10)
     },
     iconBtnContainer: {
         marginTop: verticalScale(20)

@@ -5,7 +5,6 @@ import { Colors } from '../../../constants';
 import Spacer from '../boots/Spacer';
 import MaterialIcons from 'react-native-vector-icons/dist/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
-import GradientIconButtonNoText from '../button/GradientIconButtonNoText';
 import GradientOutlineIconButton from '../button/GradientOutlineIconButton';
 
 
@@ -41,8 +40,8 @@ export default SuggestionUserCard
 
 const styles = StyleSheet.create({
     container: {
-        width: moderateScale(110),
-        height: verticalScale(130),
+        width: moderateScale(100),
+        height: verticalScale(140),
         borderColor: Colors.PLACEHOLDER,
         borderWidth: scale(1),
         borderRadius: scale(7),

@@ -4,8 +4,8 @@ import FastImage from 'react-native-fast-image';
 import { moderateScale, verticalScale } from 'react-native-size-matters';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
 import Ionicons from 'react-native-vector-icons/dist/Ionicons';
-import SimpleLineIcons from 'react-native-vector-icons/dist/SimpleLineIcons';
-import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
+import Entypo from 'react-native-vector-icons/dist/Entypo';
+import FontAwesome5 from 'react-native-vector-icons/dist/FontAwesome5';
 import { Colors, Images } from '../../../constants';
 import Spacer from '../boots/Spacer';
 import GradientIcon from '../icon/GradientIcon';
@@ -25,16 +25,16 @@ const HomeTopBar = ({ notificationOnPress, searchOnPress, walletOnPress, cartOnP
             <View style={styles.iconContainer}>
                 <TouchableOpacity onPress={searchOnPress}>
                     <GradientIcon
-                        name={"search1"}
+                        name={"search"}
                         size={ICON_SIZE}
-                        IconPack={AntDesign}
+                        IconPack={FontAwesome5}
                         colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                     />
                 </TouchableOpacity>
                 <Spacer width={ICON_SPACE} />
                 <TouchableOpacity onPress={notificationOnPress}>
                     <GradientIcon
-                        name="notifications-outline"
+                        name="notifications"
                         size={ICON_SIZE}
                         IconPack={Ionicons}
                         colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
@@ -46,7 +46,7 @@ const HomeTopBar = ({ notificationOnPress, searchOnPress, walletOnPress, cartOnP
                     <GradientIcon
                         name="wallet"
                         size={ICON_SIZE}
-                        IconPack={SimpleLineIcons}
+                        IconPack={Entypo}
                         colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                     />
                 </TouchableOpacity>
@@ -54,9 +54,9 @@ const HomeTopBar = ({ notificationOnPress, searchOnPress, walletOnPress, cartOnP
 
                 <TouchableOpacity onPress={cartOnPress}>
                     <GradientIcon
-                        name="cart-variant"
+                        name="shopping-cart"
                         size={ICON_SIZE}
-                        IconPack={MaterialCommunityIcons}
+                        IconPack={FontAwesome5}
                         colors={[Colors.BUTTON_GRADIENT_ONE, Colors.BUTTON_GRADIENT_TWO]}
                     />
                 </TouchableOpacity>

@@ -1,12 +1,13 @@
 import { FlatList, ScrollView, StyleSheet, View } from 'react-native';
 import React, { useState } from 'react';
-import { Images, NavigationStrings } from '../../../constants';
+import { Colors, Images, NavigationStrings } from '../../../constants';
 import { useNavigation } from '@react-navigation/native';
 import BackPressTopbarWithIcon from '../../../components/framework/navbar/BackPressTopbarWithIcon';
 import ChatFriendCard from '../../../components/framework/card/ChatFriendCard';
 import Spacer from '../../../components/framework/boots/Spacer';
 import SearchBar from '../../../components/framework/input/SearchBar';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import BackpressTopBar from '../../../components/framework/navbar/BackpressTopBar';
 
 const ChatFriendList = () => {
     const users = [
@@ -38,9 +39,14 @@ const ChatFriendList = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <BackPressTopbarWithIcon title={"Myprofile_4321"} />
-            <SearchBar value={searchTxt} setValue={setSearchTxt} placeholder={"Search"} />
+            <BackpressTopBar title={"MyProfile_4321"} />
             <FlatList
+                ListHeaderComponent={
+                    <>
+                        <Spacer height={20} />
+                        <SearchBar value={searchTxt} setValue={setSearchTxt} placeholder={"Search"} />
+                    </>
+                }
                 data={users}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
@@ -51,7 +57,7 @@ const ChatFriendList = () => {
                         onPress={() => onPressChatClick(item)}
                     />
                 )}
-                ListFooterComponent={<Spacer height={230} />}
+                ListFooterComponent={<Spacer height={100} />}
                 contentContainerStyle={styles.scrollContent}
             />
         </SafeAreaView>
@@ -61,5 +67,7 @@ const ChatFriendList = () => {
 export default ChatFriendList;
 
 const styles = StyleSheet.create({
-
+    container: {
+        backgroundColor: Colors.WHITE
+    }
 });

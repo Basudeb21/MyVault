@@ -23,6 +23,7 @@ const Lists = () => {
         <SafeAreaView>
             <BackpressTopBar title={"Lists"} />
             <FlatList
+                ListHeaderComponent={<Spacer height={15} />}
                 data={users}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (

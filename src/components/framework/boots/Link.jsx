@@ -1,11 +1,13 @@
-import { StyleSheet, Text } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Colors } from '../../../constants'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 
-const Link = ({ label }) => {
+const Link = ({ label, onPress }) => {
     return (
-        <Text style={styles.txt}>{label}</Text>
+        <TouchableOpacity onPress={onPress}>
+            <Text style={styles.txt}>{label}</Text>
+        </TouchableOpacity>
     )
 }
 
@@ -15,6 +17,5 @@ const styles = StyleSheet.create({
     txt: {
         color: Colors.THEME,
         textDecorationLine: "underline",
-        alignSelf: "flex-end"
     }
 })

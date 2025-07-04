@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { useNavigation } from '@react-navigation/native'
 import { NavigationStrings } from '../../constants'
 import GradientTextButton from '../../components/framework/button/GradientTextButton'
+import BackpressTopBar from '../../components/framework/navbar/BackpressTopBar'
 
 const LivePage = () => {
     const navigation = useNavigation();
@@ -14,6 +15,7 @@ const LivePage = () => {
     }
     return (
         <SafeAreaView style={{ flex: 1 }}>
+            <BackpressTopBar title={"Live page"} />
             <View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
                 <GradientTextButton label='GO LIVE' width='50%' onPress={handleShowLive} />
             </View>

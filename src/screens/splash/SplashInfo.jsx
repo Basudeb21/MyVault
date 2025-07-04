@@ -103,7 +103,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: moderateScale(25)
     },
     btn: {
+        position: "absolute",
+        bottom: moderateScale(30),
         alignItems: "center",
+        width: '100%',
     }
 
 })

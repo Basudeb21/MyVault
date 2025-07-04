@@ -3,6 +3,7 @@ import React from 'react'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
 import GradientTextButton from '../button/GradientTextButton'
 import Spacer from '../boots/Spacer'
+import { Colors } from '../../../constants'
 
 const ProfileTopCard = ({ info }) => {
     return (
@@ -23,7 +24,7 @@ export default ProfileTopCard
 const styles = StyleSheet.create({
     container: {
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
     },
     item: {
         alignItems: "center",
